@@ -5,6 +5,8 @@ class Psdfonts < Sinatra::Application
 		psd.parse!
 		@psdHash = psd.tree.to_hash
 
+		@individualKey = @psdHash.select { |key| }
+
 
 		erb :index
 	end
