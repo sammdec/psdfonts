@@ -3,7 +3,9 @@ class Psdfonts < Sinatra::Application
 
 		psd = PSD.new('./assets/img/2.psd')
 		psd.parse!
-		@psdHash = psd.tree.to_hash
+		@psdparsed = psd.tree.descendant_layers.first.to_hash
+
+		@psdHash = @psdparsed
 
 		@individualKey = @psdHash.select { |key| }
 
