@@ -11,6 +11,7 @@ map '/assets' do
 end
 
 require 'psd'
+require 'json'
 
 require './psdfonts'
 run Psdfonts
