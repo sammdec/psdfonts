@@ -5,9 +5,13 @@ class Psdfonts < Sinatra::Application
 		psd.parse!
 		@psdHash = psd.tree.to_hash
 
-		@fontHash = key_occurences(@psdHash, :font).to_json
+		@fontHash = key_occurences(@psdHash, :font)
 
-		@singleFont = @fontHash
+		singleFonts = 
+			key_occurences(@psdHash, :font).map! do |x| 
+  			unwrap(x)
+			end.compact!.flatten!
+		@singleFonts =  singleFonts.map {|x| x[:name]}.uniq
 
 
 		erb :index
@@ -24,6 +28,12 @@ class Psdfonts < Sinatra::Application
 	    return x[1] if x[0] == k
 	    return key_occurences(x[1], k) if x[1].is_a?(Array) || x[1].is_a?(Hash) #recurse again if our key is itself a Hash or Array
 	  end.compact
+	end
+
+	def unwrap(arr)
+  	return arr if arr[0].is_a?(Hash)
+  	return nil if arr.is_a?(Array) && arr.size == 0
+  	unwrap(arr[0])
 	end
 
 
