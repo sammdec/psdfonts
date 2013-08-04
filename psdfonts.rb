@@ -5,7 +5,7 @@ class Psdfonts < Sinatra::Application
 		psd.parse!
 		@psdHash = psd.tree.to_hash
 
-		@fontHash = key_occurences(@psdHash, :font)
+		@fontHash = key_occurences(@psdHash, :font).to_json
 
 		@singleFont = @fontHash
 
