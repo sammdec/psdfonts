@@ -13,5 +13,7 @@ end
 require 'psd'
 require 'json'
 
+require './helpers'
+
 require './psdfonts'
 run Psdfonts
