@@ -15,8 +15,14 @@ class Psdfonts < Sinatra::Application
 	end
 
 	post '/' do
-		
-		
+		@title = params[:title]
+		File.open('uploads/'+params[:psd][:filename], 'w') do |psd|
+			psd.write(params[:psd][:tempfile].read)
+		end
+		@fileName = params[:psd]
+
+
+		erb :index
 	end
 
 end
