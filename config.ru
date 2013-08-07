@@ -7,6 +7,7 @@ map '/assets' do
   sprockets = Sprockets::Environment.new
   sprockets.append_path 'assets/css'
   sprockets.append_path 'assets/img'
+  sprockets.append_path 'assets/js'
   run sprockets
 end
 
