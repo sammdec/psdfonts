@@ -20,8 +20,13 @@ $(document).ready(function(){
             }
 
             errorWrap.html(errorString);
+            setTimeout(function(){
+                errorWrap.fadeOut('fast', function(){
+                    errorWrap.empty();
+                });
+            },3000);
         }
-
+        // This stops the form from firing if there are errors
         if (evt && evt.preventDefault) {
             evt.preventDefault();
         } else if (event) {
