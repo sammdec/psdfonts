@@ -1,21 +1,22 @@
-new FormValidator('psd-form', [{
+var validate = new FormValidator('psd-form', [{
 	name: 'psd',
 	display: 'PSD file',
 	rules: 'required'
 }], function(errors, evt) {
+    var errorWrap = $('.errors-box');
     if (errors.length > 0) {
-        // Show the errors
+
         var errorString = '';
 
         for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
             errorString += errors[i].message + '<br />';
         }
 
-        el.innerHtml = errorString;
+        errorWrap.innerHTML = errorString;
     }
 
     if (evt && evt.preventDefault) {
-    	event.preventDefault();
+    	evt.preventDefault();
     } else if (event) {
         event.returnValue = false;
     }
