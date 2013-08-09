@@ -1,8 +1,11 @@
-<div class="errors-box"></div> <!--  .errors-box -->
+<section class="wrapper">
+	
+	<div class="intro">
+		<h1>A small tool created to help getting all the fonts thatv are used within a psd file.</h1>
+	</div> <!--  .intro -->
 
-<form class="upload-form" name="psd-form" action="/" method="POST" enctype="multipart/form-data">
-	<input type="file" name="psd">
-	<input type="submit">
-</form>
+	<%= erb :errors %> 
 
+	<%= erb :upload_form %> 
 
+</section> <!--  .wrapper -->
