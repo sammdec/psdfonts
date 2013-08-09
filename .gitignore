@@ -7,4 +7,4 @@ uploads/
 assets/img/.DS_Store
 
 .DS_Store
-*.sass-cache
+.sass-cache/*
