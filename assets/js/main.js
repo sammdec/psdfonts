@@ -1,4 +1,4 @@
-var validate = new FormValidator('psd-form', [{
+new FormValidator('psd-form', [{
 	name: 'psd',
 	display: 'PSD file',
 	rules: 'required'
