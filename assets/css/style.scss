@@ -35,6 +35,10 @@
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 /*-----------------------------------*\
 	$OBJECTS
 \*-----------------------------------*/
@@ -52,6 +56,28 @@ body {
 	color: #000;
 }
 
+.btn {
+	font-family: aleoregular;
+	padding: 20px 30px;
+	border: none;
+	border-radius: 3px;
+	font-size: 1.5rem;
+}
+
+/*-----------------------------------*\
+	$TYPE
+\*-----------------------------------*/
+
+h1,
+.alpha {
+	font-size: 2rem;
+}
+
+.beta {
+	font-size: 1.5rem;
+}
+
+
 /*-----------------------------------*\
 	$HEADER
 \*-----------------------------------*/
@@ -59,7 +85,7 @@ body {
 header {
 	background-color: #363b48;
 	box-shadow: 0px 1px 2px rgba(152,159,178,0.9);
-	@include pad(30px default);
+	@include pad(26px default);
 	margin-bottom: 30px;
 }
 
@@ -75,7 +101,7 @@ header {
 \*-----------------------------------*/
 
 .intro {
-	@include span-columns(4);
+	@include span-columns(6);
 }
 
 /*-----------------------------------*\
@@ -84,15 +110,23 @@ header {
 
 .errors-box {
 	background: #DE4854;
+	border-radius: 3px;
 }
 
 .errors-box__message {
 	color: #fff;
+	@include pad(10px 20px);
 }
 
 .upload-form {
 	@include span-columns(5);
-	@include shift(3);
+	@include shift(1);
+}
+
+.styled-file.btn {
+	background-color: #3F9FC9;
+	color: #fff;
+	
 }
 
 #js-file-field {
