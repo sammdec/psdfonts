@@ -25,7 +25,77 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/*-----------------------------------*\
+	$RESET
+\*-----------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*-----------------------------------*\
+	$OBJECTS
+\*-----------------------------------*/
+
+.wrapper {
+	@include outer-container;
+}
+
+/*-----------------------------------*\
+	$MAIN
+\*-----------------------------------*/
+
 body {
-	font-family: sans-serif;
-	color: #222;
+	font-family: aleoregular;
+	color: #000;
+}
+
+/*-----------------------------------*\
+	$HEADER
+\*-----------------------------------*/
+
+header {
+	background-color: #363b48;
+	box-shadow: 0px 1px 2px rgba(152,159,178,0.9);
+	@include pad(30px default);
+	margin-bottom: 30px;
+}
+
+.logo {
+	color: #fff;
+	@include media(max-width 760px) {
+		text-align: center;
+	}
+}
+
+/*-----------------------------------*\
+	$CONTENT
+\*-----------------------------------*/
+
+.intro {
+	@include span-columns(4);
+}
+
+/*-----------------------------------*\
+	$FORM
+\*-----------------------------------*/
+
+.errors-box {
+	background: #DE4854;
+}
+
+.errors-box__message {
+	color: #fff;
+}
+
+.upload-form {
+	@include span-columns(5);
+	@include shift(3);
+}
+
+#js-file-field {
+	display: none;
+	visibility: hidden;
 }
