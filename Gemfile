@@ -8,7 +8,9 @@ gem 'puma'
 gem 'sprockets'
 gem 'sprockets-sass'
 gem 'sass'
+
 gem 'bourbon'
+gem 'neat'
 
 gem 'psd'
 

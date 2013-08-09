@@ -9,6 +9,9 @@ GEM
     hashie (2.0.5)
     hike (1.2.3)
     multi_json (1.7.8)
+    neat (1.3.0)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
     psd (0.4.1)
       bindata
       chunky_png
@@ -43,6 +46,7 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon
+  neat
   psd
   puma
   sass
