@@ -63,7 +63,7 @@ body {
 	border-radius: 3px;
 	font-size: 1.5rem;
 	cursor: pointer;
-	@include transition(all 0.3s ease-out);
+	@include transition(all 0.2s ease-out);
 }
 
 /*-----------------------------------*\
@@ -88,13 +88,18 @@ header {
 	background-color: #363b48;
 	box-shadow: 0px 1px 2px rgba(152,159,178,0.9);
 	@include pad(26px default);
-	margin-bottom: 30px;
 }
 
 .logo {
 	color: #fff;
 	@include media(max-width 760px) {
 		text-align: center;
+	}
+	h1 {
+		display: inline-block;
+		@include media(max-width 760px) {
+			display: block;
+		}
 	}
 }
 
@@ -109,6 +114,10 @@ header {
 /*-----------------------------------*\
 	$FORM
 \*-----------------------------------*/
+
+.errors-spacer {
+	min-height: 50px;
+}
 
 .errors-box {
 	background: #DE4854;
@@ -128,11 +137,19 @@ header {
 .styled-file.btn {
 	background-color: #3F9FC9;
 	color: #fff;
-	box-shadow: 2px 4px 0 #2f82a6;
 }
 
 .styled-file.btn:hover {
-	box-shadow: 0 2px 0 #2f82a6;
+	background-color: #2f82a6;
+}
+
+.submit.btn {
+	background-color: #26AE90;
+	color: #fff;
+}
+
+.submit.btn:hover {
+	background-color: #209279;
 }
 
 #js-file-field {
