@@ -12,7 +12,12 @@ $(document).ready(function(){
     }], function(errors, evt) {
         var errorWrap = $('.errors-box');
         if (errors.length > 0) {
-
+            if (evt){
+                evt.preventDefault();
+            } else if (event) {
+                event.returnValue = false;
+            }
+            
             var errorString = '';
 
             for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
@@ -20,18 +25,12 @@ $(document).ready(function(){
             }
 
             errorWrap.html(errorString);
+            console.log(errors);
             setTimeout(function(){
                 errorWrap.fadeOut('fast', function(){
-                    errorWrap.empty();
                 });
             },3000);
-        }
-        // This stops the form from firing if there are errors
-        if (evt && evt.preventDefault) {
-            evt.preventDefault();
-        } else if (event) {
-            event.returnValue = false;
-        }
+        };
     });
 });
 
