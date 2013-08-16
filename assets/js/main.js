@@ -1,8 +1,19 @@
 $(document).ready(function(){
     // This blocks the button default event and fires the field input but allows for styling.
+
+    var realFileField = $('#js-file-field');
+
     $('#js-file-btn').click(function(e){
         e.preventDefault();
-        $('#js-file-field').click();
+        realFileField.click();
+    });
+
+    realFileField.change(function(){
+        var filePath = $(this).val();
+        var fileName = filePath.substr(filePath.lastIndexOf('\\')+1);
+
+        $('#js-file-name').html(fileName).addClass('fade-in');
+        $('.start-again').addClass('fade-in');
     });
 
     new FormValidator('psd-form', [{
