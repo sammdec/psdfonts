@@ -129,7 +129,19 @@ header {
 	
 }
 
-#js-file-field {
+.faded-out {
+	opacity: 0
+}
+
+.hide-completely {
 	display: none;
 	visibility: hidden;
+}
+
+.fade-in {
+	-webkit-transition: all 1.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 1.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 1.3s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 1.3s ease-out;
+	opacity: 1;
 }
