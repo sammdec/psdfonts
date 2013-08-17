@@ -1,13 +1,18 @@
 <form class="upload-form" name="psd-form" action="/" method="POST" enctype="multipart/form-data">
 
+	<%= erb :errors %> 
+
 	<fieldset>
 		<input type="file" class="hide-completely" id="js-file-field" name="psd">
-		<button class="upload-form__btn--upload btn" id="js-file-btn">choose a PSD</button>
-		<p class="upload-form__file-name faded-out" id="js-file-name"></p>
+		<button class="upload-form__btn--upload btn" id="js-file-btn">choose a psd</button>
+
+		<div class="faded-out upload-form__file-actions">
+			<p class="upload-form__file-name" id="js-file-name"></p>
+			<a href="/" class="start-again">start over ???</a>
+		</div> <!--  .faded-out upload-form__file-actions -->
 	</fieldset>
 
 	<input class="upload-form__btn--submit btn" type="submit" value="upload">
 
-	<a class="start-again faded-out" href="/">start over????</a> <!--  .start-again -->
 </form>
 
