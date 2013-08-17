@@ -1,13 +1,17 @@
 <section class="wrapper">
 
-	<%= erb :errors %> 
+	<header>
+		<h1 class="site-title"><a href="/">.psd fonts</a></h1>
+	</header>
 	
 	<div class="intro">
-		<h2 class="alpha">A small tool created to help getting all the fonts that are used within a psd file.</h2>
+		<p>Want to figure out what fonts are being used in a psd without trawling through badly labelled layers, well then just upload your psd below.</p>
 	</div> <!--  .intro -->
 
-	
+	<%= erb :upload_form %>
 
-	<%= erb :upload_form %> 
+	<div class="shit-that-should-probably-be-said">
+		<p>This site does not keep a copy of your psd's or your results, this aint no PRISM joint!!</p>
+	</div> <!--  .shit-that-should-probably-be-said -->
 
 </section> <!--  .wrapper -->
