@@ -53,10 +53,10 @@ a {
 	color: #231F20;
 	background-color: transparent;
 	cursor: pointer;
-	-webkit-transition: all 0.3s ease-in-out;  /* Chrome 1-25, Safari 3.2+ */
-     -moz-transition: all 0.3s ease-in-out;  /* Firefox 4-15 */
-       -o-transition: all 0.3s ease-in-out;  /* Opera 10.50–12.00 */
-          transition: all 0.3s ease-in-out;
+	@include transition(all 0.3s ease-in-out);
+	&:hover {
+		@include transform(scale(1.05));
+	}
 }
 
 /*-----------------------------------*\
@@ -85,7 +85,7 @@ header {
 	@include shift(2);
 	@include row;
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 25px;
 }
 
 .intro {
@@ -93,7 +93,7 @@ header {
 	@include shift(3);
 	@include row;
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 /*-----------------------------------*\
@@ -107,10 +107,11 @@ header {
 
 .errors-box__message {
 	color: #fff;
-	padding: 6px 0;
+	padding: 8px 15px;
 	margin: 0;
 	background: #DE4854;
 	border-radius: 3px;
+	display: inline-block;
 }
 
 .upload-form {
@@ -124,24 +125,46 @@ header {
 .upload-form__file-name {
 	display: inline-block;
 	margin: 5px 0;
+	color: #7f8c8d;
+}
+
+.upload-form__file-actions {
+	margin-bottom: 12px;
 }
 
 .start-again.btn {
+	display: inline-block;
 	font-size: ceil(golden-ratio(16px, 0));
-	padding: 5px 30px;
+	padding: 5px;
+	border-color: #7f8c8d;
+	border-width: 3px;
+	border-radius: 50%;
+	vertical-align: middle;
+	&:hover {
+		background: #7f8c8d;
+		i {
+			background: url(/assets/reload-hover.png) no-repeat center center;
+		}
+	}
+	i {
+		display: block;
+		background: url(/assets/reload.png) no-repeat center center;
+		min-height:22px;
+		min-width: 22px;
+		@include animation-name(spin);
+		@include animation-duration(1500ms);
+		@include animation-timing-function(linear);
+		@include animation-iteration-count(infinite);
+	}
 }
 
 .upload-form__btn--upload.btn {
 	border-color: #DF5B57;
 	color: #DF5B57;
+	margin-bottom: 12px;
 	&:hover {
 		color: #edebd8;
 		background-color: #DF5B57;
-		-webkit-transform: scale(1.05);  
-       -moz-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-         -o-transform: scale(1.05);
-            transform: scale(1.05);
 	}
 }
 
@@ -151,11 +174,6 @@ header {
 	&:hover {
 		color: #edebd8;
 		background-color: #50a2a2;
-		-webkit-transform: scale(1.05);  
-       -moz-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-         -o-transform: scale(1.05);
-            transform: scale(1.05);
 	}
 }
 
@@ -167,7 +185,8 @@ header {
 }
 
 .faded-out {
-	opacity: 0
+	opacity: 0;
+	display: none;
 }
 
 .hide-completely {
@@ -176,11 +195,17 @@ header {
 }
 
 .fade-in {
-	-webkit-transition: all 1.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
-     -moz-transition: all 1.3s ease-out;  /* Firefox 4-15 */
-       -o-transition: all 1.3s ease-out;  /* Opera 10.50–12.00 */
-          transition: all 1.3s ease-out;
+	@include transition(opacity 1.3s ease-out);
 	opacity: 1;
+}
+
+@include keyframes(spin) {
+	from {
+		@include transform(rotate(0deg));
+	}
+	to {
+		@include transform(rotate(360deg));
+	}
 }
 
 /*-----------------------------------*\
