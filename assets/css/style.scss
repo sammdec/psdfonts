@@ -1,31 +1,6 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-@font-face {
-  font-family: 'aleobold';
-  src: url('fonts/aleo-bold-webfont.eot');
-  src: url('fonts/aleo-bold-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/fonts/aleo-bold-webfont.woff') format('woff'),
-       url('fonts/aleo-bold-webfont.ttf') format('truetype'),
-       url('fonts/aleo-bold-webfont.svg#aleobold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-
-
-@font-face {
-    font-family: 'aleoregular';
-    src: url('fonts/aleo-regular-webfont.eot');
-    src: url('fonts/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/aleo-regular-webfont.woff') format('woff'),
-         url('fonts/aleo-regular-webfont.ttf') format('truetype'),
-         url('fonts/aleo-regular-webfont.svg#aleoregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /*-----------------------------------*\
 	$RESET
 \*-----------------------------------*/
@@ -52,16 +27,15 @@ a {
 \*-----------------------------------*/
 
 body {
-	font-family: aleoregular;
-	color: #000;
+	font-family: 'Imprima', sans-serif;
+	font-weight: 400;
+	color: #231F20;
+	background-color: #f7f8f4;
+	line-height: 1.3;
 }
 
 .btn {
-	font-family: aleoregular;
-	padding: 20px 30px;
-	border: none;
-	border-radius: 3px;
-	font-size: 1.5rem;
+	font-family: 'Imprima', sans-serif;
 }
 
 /*-----------------------------------*\
