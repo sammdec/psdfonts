@@ -22,8 +22,8 @@ $(document).ready(function(){
 
    formValidator = new FormValidator('psd-form', [{
     name: 'psd',
-    display: 'psd file',
-    rules: 'required'
+    display: '.psd',
+    rules: 'required|is_file_type[psd]',
     }], function(errors, evt) {
 
         if (errors.length > 0) {
