@@ -7,7 +7,7 @@ $(document).ready(function(){
     $('#js-file-btn').click(function(e){
         e.preventDefault();
         realFileField.click();
-        errorWrap.removeClass('fade-in');
+        errorWrap.removeClass('fade-in').hide();
     });
 
     realFileField.change(function(){
@@ -15,7 +15,9 @@ $(document).ready(function(){
         var fileName = filePath.substr(filePath.lastIndexOf('\\')+1);
 
         $('#js-file-name').text(fileName);
-        $('.upload-form__file-actions').addClass('fade-in');
+        $('.upload-form__file-actions').show(0,function(){
+            $(this).addClass('fade-in');
+        });
     });
 
    formValidator = new FormValidator('psd-form', [{
@@ -32,7 +34,9 @@ $(document).ready(function(){
                 errorString += '<p class="errors-box__message">' + errors[i].message + '<p>';
             }
 
-            errorWrap.html(errorString).addClass('fade-in');
+            errorWrap.html(errorString).show(0,function(){
+                $(this).addClass('fade-in');
+            });
 
             // This stops the form from firing if there are errors
             if (evt && evt.preventDefault) {
