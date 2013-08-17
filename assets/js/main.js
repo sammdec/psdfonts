@@ -47,7 +47,8 @@ $(document).ready(function(){
         };
     });
 
-    formValidator.setMessage('required', 'You must choose a %s.');
+    formValidator.setMessage('required', 'You must choose a %s file');
+    formValidator.setMessage('is_file_type', 'The file must be a %s');
 });
 
 
