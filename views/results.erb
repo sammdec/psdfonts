@@ -1,5 +1,5 @@
 <a href="/">Home</a>
 
 <% @singleFonts.each do |font| %>
-	<p><%= font.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></p>
+	<p><%= font.gsub(/(?<=[a-z])(?=[A-Z])/, ' ').gsub(/-/, ' - ') %></p>
 <% end %>
