@@ -31,7 +31,7 @@ $(document).ready(function(){
             var errorString = '';
 
             for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
-                errorString += '<p class="errors-box__message">' + errors[i].message + '<p>';
+                errorString += '<p class="errors-box__message">' + errors[i].message + '</p>';
             }
 
             errorWrap.html(errorString).show(0,function(){
