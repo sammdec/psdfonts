@@ -1,6 +1,10 @@
-<a href="/">Home</a>
+<section class="wrapper">
 	<%= erb :header %>
+	
+	<div class="font-list">
+	<% @singleFonts.each do |font| %>
+		<p><%= font.gsub(/(?<=[a-z])(?=[A-Z])/, ' ').gsub(/-/, ' - ') %></p>
+	<% end %>
+	</div> <!--  .font-list -->
 
-<% @singleFonts.each do |font| %>
-	<p><%= font.gsub(/(?<=[a-z])(?=[A-Z])/, ' ').gsub(/-/, ' - ') %></p>
-<% end %>
+</section> <!--  .wrapper -->
