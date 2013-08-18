@@ -89,6 +89,10 @@ header {
 	@include row;
 	text-align: center;
 	margin-top: 25px;
+	@include media(max-width 810px) {
+		@include span-columns(12);
+		@include shift(0);
+	}
 }
 
 .intro {
@@ -96,7 +100,11 @@ header {
 	@include shift(3);
 	@include row;
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 30px;
+	@include media(max-width 810px) {
+		@include span-columns(12);
+		@include shift(0);
+	}
 }
 
 /*-----------------------------------*\
@@ -128,7 +136,7 @@ header {
 .upload-form__file-name {
 	display: inline-block;
 	margin: 5px 0;
-	color: #7f8c8d;
+	color: #DF5B57;
 }
 
 .upload-form__file-actions {
@@ -210,6 +218,7 @@ header {
 	$FOOTER
 \*-----------------------------------*/
 
+.full-bleed {
 	background-color: #34495e;
 	width: 100%;
 }
@@ -221,7 +230,6 @@ footer {
 }
 
 .some-attribs {
-	@include span-columns(8);
 	@include span-columns(4);
 	@include shift(2);
 	font-size: 15px;
