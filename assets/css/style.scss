@@ -95,7 +95,8 @@ header {
 	}
 }
 
-.intro {
+.intro,
+.spell-it-out {
 	@include span-columns(6);
 	@include shift(3);
 	@include row;
@@ -211,6 +212,63 @@ header {
 	}
 	to {
 		@include transform(rotate(360deg));
+	}
+}
+
+/*-----------------------------------*\
+	$RESULTS
+\*-----------------------------------*/
+
+.spell-it-out {
+	text-align: left;
+}
+
+.font-list {
+	@include span-columns(6);
+	@include shift(3);
+	@include row;	
+	margin-top: 20px;
+}
+
+.font-list__single-font {
+	font-size: ceil(golden-ratio(17px, 1));
+	color: #231F20;
+	margin-bottom: 15px;
+	@include row;
+}
+
+.font-list__name {
+	@include span-columns(7);
+}
+
+.font-list__link-right {
+	@include span-columns(5);
+	@include omega;
+	text-align: right;
+}
+
+.font-list__buy-font {
+	text-align: left;
+	padding-right: 8px;
+	color: #DF5B57;
+	font-size: ceil(golden-ratio(17px, 0));
+	background: url(/assets/cart.png) no-repeat 6px center;
+}
+
+.all-of-the-extras {
+	@include span-columns(12);
+	text-align: center;
+}
+
+.copy-fonts {
+	color: #34495e;
+	font-size: ceil(golden-ratio(17px, 0));
+	background: url(/assets/clipboard.png) no-repeat 10px center;
+	padding-right: 10px;
+	&.clipboard-is-hover {
+		background: #34495e url(/assets/clipboard-hover.png) no-repeat 10px center;
+		border-color: #34495e;
+		color: #edebd8;
 	}
 }
 
