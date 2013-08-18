@@ -1,4 +1,5 @@
 <a href="/">Home</a>
+	<%= erb :header %>
 
 <% @singleFonts.each do |font| %>
 	<p><%= font.gsub(/(?<=[a-z])(?=[A-Z])/, ' ').gsub(/-/, ' - ') %></p>
