@@ -182,13 +182,6 @@ header {
 	}
 }
 
-.shit-that-should-probably-be-said {
-	@include span-columns(6);
-	@include shift(3);
-	@include row;
-	font-size: 13px;
-}
-
 .faded-out {
 	opacity: 0;
 	display: none;
@@ -217,14 +210,46 @@ header {
 	$FOOTER
 \*-----------------------------------*/
 
-footer {
-	padding: 16px 0;
-	margin-top: 50px;
 	background-color: #34495e;
+	width: 100%;
+}
+
+footer {
+	padding: 25px 0;
+	margin-top: 30px;
 	color: #f7f8f4;
 }
 
 .some-attribs {
 	@include span-columns(8);
+	@include span-columns(4);
 	@include shift(2);
+	font-size: 15px;
+	@include media(max-width 810px) {
+		@include span-columns(12);
+		@include shift(0);
+		text-align: center;
+	}
+	a {
+		font-weight: 600;
+	}
+}
+
+.heart-icon {
+	width: 18px;
+	height: 14px;
+	display: inline-block;
+	background: url(/assets/heart.png) no-repeat center center;
+}
+
+.shit-that-should-probably-be-said {
+	@include span-columns(4);
+	@include omega;
+	font-size: 13px;
+	text-align: right;
+	@include media(max-width 810px) {
+		@include span-columns(12);
+		text-align: center;
+		margin-top: 15px;
+	}
 }
