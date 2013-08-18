@@ -49,6 +49,16 @@ $(document).ready(function(){
 
     formValidator.setMessage('required', 'You must choose a %s file');
     formValidator.setMessage('is_file_type', 'The file must be a %s');
+
+
+    var clip = new ZeroClipboard( $('#js-copy-btn'), {
+        moviePath: '/assets/zero-clipboard.swf',
+        hoverClass: 'clipboard-is-hover'
+    });
+
+    clip.on('complete', function(client, args) {
+        alert('Copied!');
+    });
 });
 
 
