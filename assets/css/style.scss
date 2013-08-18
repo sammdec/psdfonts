@@ -32,11 +32,12 @@ fieldset {
 \*-----------------------------------*/
 
 body {
-	font-family: 'Imprima', sans-serif;
-	font-weight: 400;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 1.25;
 	color: #231F20;
 	background-color: #f7f8f4;
-	line-height: 1.3;
 }
 
 a {
@@ -44,12 +45,13 @@ a {
 }
 
 .btn {
-	font-family: 'Imprima', sans-serif;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 600;
 	display: inline-block;
-	padding: 7px 30px;
+	padding: 5px 30px 7px;
 	border-radius: 35px;
-	font-size: ceil(golden-ratio(16px, 1));
-	border: 4px solid;
+	font-size: ceil(golden-ratio(17px, 1));
+	border: 3px solid;
 	color: #231F20;
 	background-color: transparent;
 	cursor: pointer;
@@ -68,7 +70,8 @@ h1,
 	font-family: 'Playfair Display', serif;
 	font-weight: 900;
 	font-style: italic;
-	font-size: ceil(golden-ratio(16px, 4));
+	font-size: ceil(golden-ratio(17px, 4));
+	line-height: 1.1;
 	color: #DF5B57;
 }
 
