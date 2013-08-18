@@ -22,7 +22,8 @@ class Psdfonts < Sinatra::Application
 	  			unwrap(x)
 				end.compact!.flatten!
 
-			@singleFonts =  singleFonts.map {|x| x[:name]}.uniq
+			@singleFonts = 
+				singleFonts.map {|x| x[:name].gsub(/-/, ' - ').gsub(/(?<=[a-z])(?=[A-Z])/, ' ')}.uniq
 
 			erb :results
 		end
