@@ -11,9 +11,7 @@ helpers do
 	  end.compact
 	end
 
-	def unwrap(arr)
-  	return arr if arr[0].is_a?(Hash)
-  	return nil if arr.is_a?(Array) && arr.size == 0
-  	unwrap(arr[0])
+	def purchase_link(item)
+		return 'http://www.myfonts.com/search/' + item.gsub(/ - /,'-').gsub(/ /, '+') + '/fonts/'
 	end
 end
