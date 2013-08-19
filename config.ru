@@ -3,7 +3,6 @@ require 'bundler'
 Bundler.require
 
 require 'sprockets'
-require 'uglifier'
 
 if settings.production?
 	Sprockets::Sass.options[:style] = :compressed
