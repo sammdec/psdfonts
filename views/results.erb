@@ -17,11 +17,16 @@
 	</div> <!--  .font-list -->
 
 	<div class="all-of-the-extras">
-		<button id="js-copy-btn" class="copy-fonts btn" data-clipboard-target="clipboard_text">copy to clipboard</button>
+		<button id="js-copy-btn" class="copy-fonts btn" data-clipboard-target="clipboard_text" data-copy-text="copied!">copy to clipboard</button>
 		<a href="/" class="start-again btn"><i></i> start over?</a>
 	</div> <!--  .all-of-the-extras -->
 
 	<div class="hide-completely" id="clipboard_text">
-		<% @singleFonts.each do |font| %><%= font %>,<% end %>
+		<%  @singleFonts.each_with_index do |font, index| 
+				if index != @singleFonts.length - 1 %>
+		<%= font %>,&nbsp;
+		<% else %>
+		<%= font %>
+		<% end end %>
 	</div> <!-- #clipboard_text  -->
 </section> <!--  .wrapper -->
