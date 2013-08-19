@@ -332,13 +332,14 @@ footer {
 	}
 	a {
 		font-weight: 600;
-		font-size: 18px;
+		font-size: 17px;
 	}
 }
 
 .heart-icon {
 	width: 18px;
 	height: 14px;
+	margin: 0 2px;
 	display: inline-block;
 	background: url(/assets/heart.png) no-repeat center center;
 }
