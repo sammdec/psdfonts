@@ -55,7 +55,7 @@ a {
 	color: #231F20;
 	background-color: transparent;
 	cursor: pointer;
-	@include transition(all 0.3s ease-in-out);
+	@include transition(all 0.2s ease-in-out);
 	&:hover {
 		@include transform(scale(1.05));
 	}
@@ -215,6 +215,18 @@ header {
 	}
 }
 
+@include keyframes(attnGrab) {
+	0% {
+		@include transform(scale(1));
+	}
+	50% {
+		@include transform(scale(1.2));
+	}
+	100% {
+		@include transform(scale(1));
+	}
+}
+
 /*-----------------------------------*\
 	$RESULTS
 \*-----------------------------------*/
@@ -253,6 +265,11 @@ header {
 	color: #DF5B57;
 	font-size: ceil(golden-ratio(17px, 0));
 	background: url(/assets/cart.png) no-repeat 6px center;
+	&:hover {
+		background: #DF5B57 url(/assets/cart-hover.png) no-repeat 6px center;
+		color: #edebd8;
+		border-color: #DF5B57;
+	}
 }
 
 .all-of-the-extras {
@@ -270,6 +287,13 @@ header {
 		border-color: #34495e;
 		color: #edebd8;
 	}
+}
+
+.attn-grab {
+	@include animation-name(attnGrab);
+	@include animation-duration(1000ms);
+	@include animation-timing-function(ease-in);
+	@include animation-iteration-count(1);
 }
 
 /*-----------------------------------*\
@@ -298,6 +322,7 @@ footer {
 	}
 	a {
 		font-weight: 600;
+		font-size: 18px;
 	}
 }
 
@@ -319,3 +344,16 @@ footer {
 		margin-top: 15px;
 	}
 }
+
+/*-----------------------------------*\
+	$PRELOADS
+\*-----------------------------------*/
+
+body:before {
+    content: url(/assets/reload-hover.png) 
+    url(/assets/clipboard-hover.png) 
+    url(/assets/cart-hover.png);
+    display:none;
+    visibility: hidden;
+}
+
