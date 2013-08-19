@@ -3,6 +3,13 @@ require 'bundler'
 Bundler.require
 
 require 'sprockets'
+require 'uglifier'
+
+if settings.production?
+	Sprockets::Sass.options[:style] = :compressed
+end
+
+
 map '/assets' do
   sprockets = Sprockets::Environment.new
   sprockets.append_path 'assets/css'
