@@ -6,6 +6,7 @@ GEM
       sass (>= 3.2.0)
       thor
     chunky_png (1.2.8)
+    erubis (2.7.0)
     hashie (2.0.5)
     hike (1.2.3)
     multi_json (1.7.9)
@@ -46,6 +47,7 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon
+  erubis
   neat
   psd
   puma

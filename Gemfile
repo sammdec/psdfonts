@@ -5,6 +5,8 @@ ruby '2.0.0'
 gem 'sinatra'
 gem 'puma'
 
+# faster erb
+gem 'erubis'
 gem 'sprockets'
 gem 'sprockets-sass'
 gem 'sass'
