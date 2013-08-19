@@ -10,7 +10,7 @@
 		<div class="font-list__single-font">
 			<p class="font-list__name"><%= font %></p>
 			<div class="font-list__link-right">
-				<a class="font-list__buy-font btn" target="_blank" href="<%= purchase_link(font) %>">buy at MyFonts</a>
+				<a class="font-list__buy-font btn" target="_blank" data-font-name="<%= font %>" href="<%= purchase_link(font) %>">buy at MyFonts</a>
 			</div> <!--  .font-list__link-right -->
 		</div> <!--  .font-list__single-font -->
 	<% end %>

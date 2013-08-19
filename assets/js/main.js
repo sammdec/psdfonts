@@ -74,6 +74,12 @@ $(document).ready(function(){
 
         GoSquared.DefaultTracker.TrackEvent('Start over');
     });
+
+    $('.font-list__buy-font').click(function(){
+        var fontName = $(this).data('font-name');
+        GoSquared.DefaultTracker.TrackEvent('Buy link clicked',{name: fontName});
+        console.log(fontName);
+    });
 });
 
 
