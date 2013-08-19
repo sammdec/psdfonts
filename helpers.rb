@@ -12,6 +12,6 @@ helpers do
 	end
 
 	def purchase_link(item)
-		return 'http://www.myfonts.com/search/' + item.gsub(/ - /,'-').gsub(/ /, '+') + '/fonts/'
+		return 'http://www.myfonts.com/search/' + item.gsub(/ - /,'+').gsub(/ /, '+') + '/fonts/'
 	end
 end
