@@ -3,7 +3,7 @@ class Psdfonts < Sinatra::Application
 		erb :index
 	end
 
-	post '/' do
+	post '/results' do
 		@uploadedFile = params[:psd]
 		if @uploadedFile.nil?
 			erb :index
