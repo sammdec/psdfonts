@@ -25,7 +25,8 @@ class Psdfonts < Sinatra::Application
 			erb :results
 		end
 
-		
+	not_found do
+  	erb :fourohfour
 	end
 
 end
