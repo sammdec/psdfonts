@@ -12,7 +12,6 @@ map '/assets' do
 end
 
 require 'psd'
-require 'json'
 
 require './helpers'
 
