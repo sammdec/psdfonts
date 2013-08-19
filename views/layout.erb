@@ -13,6 +13,10 @@
 		<%= yield %>
 
 		<%= erb :footer %>
+
+    <% if settings.production? %>
+      OK
+    <% end %>
     
 		<script src="/assets/app.js"></script>
 	</body>

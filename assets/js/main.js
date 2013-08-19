@@ -49,6 +49,8 @@ $(document).ready(function(){
             } else if (event) {
                 event.returnValue = false;
             };
+        } else {
+            GoSquared.DefaultTracker.TrackEvent('Upload Success');
         };
     });
 
@@ -69,6 +71,8 @@ $(document).ready(function(){
         setTimeout(function(){
             clipButton.removeClass('attn-grab');
         },6000);
+
+        GoSquared.DefaultTracker.TrackEvent('Start over');
     });
 });
 
