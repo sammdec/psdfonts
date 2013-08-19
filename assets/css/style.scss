@@ -45,15 +45,6 @@ a {
 }
 
 .btn {
-<<<<<<< HEAD
-	font-family: aleoregular;
-	padding: 20px 30px;
-	border: none;
-	border-radius: 3px;
-	font-size: 1.5rem;
-	cursor: pointer;
-	@include transition(all 0.2s ease-out);
-=======
 	font-family: 'Dosis', sans-serif;
 	font-weight: 600;
 	display: inline-block;
@@ -68,7 +59,6 @@ a {
 	&:hover {
 		@include transform(scale(1.05));
 	}
->>>>>>> new_design
 }
 
 /*-----------------------------------*\
@@ -94,17 +84,6 @@ h1,
 \*-----------------------------------*/
 
 header {
-<<<<<<< HEAD
-	background-color: #363b48;
-	box-shadow: 0px 1px 2px rgba(152,159,178,0.9);
-	@include pad(26px default);
-}
-
-.logo {
-	color: #fff;
-	@include media(max-width 760px) {
-		text-align: center;
-=======
 	@include span-columns(8);
 	@include shift(2);
 	@include row;
@@ -113,7 +92,6 @@ header {
 	@include media(max-width 810px) {
 		@include span-columns(12);
 		@include shift(0);
->>>>>>> new_design
 	}
 	h1 {
 		display: inline-block;
@@ -166,24 +144,6 @@ header {
 	margin-top: 10px;
 }
 
-<<<<<<< HEAD
-.styled-file.btn {
-	background-color: #3F9FC9;
-	color: #fff;
-}
-
-.styled-file.btn:hover {
-	background-color: #2f82a6;
-}
-
-.submit.btn {
-	background-color: #26AE90;
-	color: #fff;
-}
-
-.submit.btn:hover {
-	background-color: #209279;
-=======
 .upload-form__file-name {
 	display: inline-block;
 	margin: 5px 0;
@@ -220,7 +180,6 @@ header {
 		@include animation-timing-function(linear);
 		@include animation-iteration-count(infinite);
 	}
->>>>>>> new_design
 }
 
 .upload-form__btn--upload.btn {

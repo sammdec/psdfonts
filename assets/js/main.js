@@ -39,15 +39,6 @@ $(document).ready(function(){
                 errorString += '<p class="errors-box__message">' + errors[i].message + '</p>';
             }
 
-<<<<<<< HEAD
-            errorWrap.html(errorString);
-            console.log(errors);
-            setTimeout(function(){
-                errorWrap.fadeOut('fast', function(){
-                });
-            },3000);
-        };
-=======
             errorWrap.html(errorString).show(0,function(){
                 $(this).addClass('fade-in');
             });
@@ -78,7 +69,6 @@ $(document).ready(function(){
         setTimeout(function(){
             clipButton.removeClass('attn-grab');
         },6000);
->>>>>>> new_design
     });
 });
 
