@@ -23,14 +23,23 @@ $(document).ready(function(){
         fadeInName(fileName);
     });
 
+    $('#js-file-dropbox').click(function(e){
+        e.preventDefault();
+        Dropbox.choose({
+            linkType: "direct",
+            multiselect: false,
+            extensions: ['.psd'],
+            success: function(files) {
+                $('#js-dropbox-field').val(files[0].link);
                 fadeInName(files[0].name);
+            }
         });
     });
 
    formValidator = new FormValidator('psd-form', [{
     name: 'psd',
     display: '.psd',
-    rules: 'required|is_file_type[psd]',
+    rules: '',
     }], function(errors, evt) {
 
         if (errors.length > 0) {
@@ -57,7 +66,7 @@ $(document).ready(function(){
                 event.returnValue = false;
             };
         } else {
-            GoSquared.DefaultTracker.TrackEvent('Upload Success');
+            $('.upload-form__btn--submit').addClass('uploading');
         };
     });
 
@@ -68,7 +77,6 @@ $(document).ready(function(){
     $('.font-list__buy-font').click(function(){
         var fontName = $(this).data('font-name');
         GoSquared.DefaultTracker.TrackEvent('Buy link clicked',{name: fontName});
-        console.log(fontName);
     });
 });
 
