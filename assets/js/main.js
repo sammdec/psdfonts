@@ -21,6 +21,7 @@ $(document).ready(function(){
         var filePath = $(this).val();
         var fileName = filePath.substr(filePath.lastIndexOf('\\')+1);
         fadeInName(fileName);
+        GoSquared.DefaultTracker.TrackEvent('Upload method',{type: web});
     });
 
     $('#js-file-dropbox').click(function(e){
@@ -32,6 +33,7 @@ $(document).ready(function(){
             success: function(files) {
                 $('#js-dropbox-field').val(files[0].link);
                 fadeInName(files[0].name);
+                GoSquared.DefaultTracker.TrackEvent('Upload method',{type: dropbox});
             }
         });
     });
