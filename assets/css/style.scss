@@ -46,9 +46,9 @@ a {
 
 .btn {
 	font-family: 'Dosis', sans-serif;
-	font-weight: 600;
+	font-weight: 500;
 	display: inline-block;
-	padding: 5px 30px 7px;
+	padding: 3px 20px 5px;
 	border-radius: 35px;
 	font-size: ceil(golden-ratio(17px, 1));
 	border: 3px solid;
@@ -57,7 +57,7 @@ a {
 	cursor: pointer;
 	@include transition(all 0.2s ease-in-out);
 	&:hover {
-		@include transform(scale(1.05));
+		@include transform(scale(1.02));
 	}
 }
 
@@ -154,11 +154,16 @@ header {
 	margin-bottom: 12px;
 }
 
+.split-it {
+	display: inline-block;
+	margin: 0 4px;
+}
+
 .start-again.btn {
 	display: inline-block;
 	font-size: ceil(golden-ratio(17px, 0));
 	color: #7f8c8d;
-	padding: 5px 7px 5px 5px;
+	padding: 3px 7px 3px 5px;
 	margin-left: 4px;
 	border-color: #7f8c8d;
 	&:hover {
@@ -189,6 +194,15 @@ header {
 	&:hover {
 		color: #edebd8;
 		background-color: #DF5B57;
+	}
+}
+
+.upload-form__btn--dropbox.btn {
+	border-color: #007ee5;
+	color: #007ee5;
+	&:hover {
+		color: #edebd8;
+		background-color: #007ee5;
 	}
 }
 
@@ -271,12 +285,13 @@ header {
 
 .font-list__buy-font {
 	text-align: left;
-	padding-right: 8px;
+	padding-right: 10px;
+	padding-left: 34px;
 	color: #DF5B57;
 	font-size: ceil(golden-ratio(17px, 0));
-	background: url(/assets/cart.png) no-repeat 6px center;
+	background: url(/assets/cart.png) no-repeat 8px center;
 	&:hover {
-		background: #DF5B57 url(/assets/cart-hover.png) no-repeat 6px center;
+		background: #DF5B57 url(/assets/cart-hover.png) no-repeat 8px center;
 		color: #edebd8;
 		border-color: #DF5B57;
 	}
@@ -291,7 +306,8 @@ header {
 	color: #34495e;
 	font-size: ceil(golden-ratio(17px, 0));
 	background: url(/assets/clipboard.png) no-repeat 10px center;
-	padding-right: 10px;
+	padding-right: 12px;
+	padding-left: 30px;
 	&.clipboard-is-hover {
 		background: #34495e url(/assets/clipboard-hover.png) no-repeat 10px center;
 		border-color: #34495e;
