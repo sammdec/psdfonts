@@ -9,7 +9,8 @@ class Psdfonts < Sinatra::Application
 			erb :index
 		else
 			Tempfile.open(['psd', '.psd']) do |file|
-				file.write(@uploadedFile[:tempfile].read)
+				#file.write(@uploadedFile[:tempfile].read)
+				file.write("https://dl.dropboxusercontent.com/1/view/odcid116o6bcptg/Benchmark%20Shared/Current/Black%20Tomato%20Agency/VM%20Go%20For%20Gold/Homepage.psd".read)
 				@tmpPath = file.path
 			end
 
