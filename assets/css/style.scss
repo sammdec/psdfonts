@@ -215,6 +215,15 @@ header {
 	}
 }
 
+.uploading i {
+		display: inline-block;
+		background: url();
+		@include animation-name(spin);
+		@include animation-duration(1500ms);
+		@include animation-timing-function(linear);
+		@include animation-iteration-count(infinite);
+}
+
 .faded-out {
 	opacity: 0;
 	display: none;

@@ -66,7 +66,8 @@ $(document).ready(function(){
                 event.returnValue = false;
             };
         } else {
-            $('.upload-form__btn--submit').addClass('uploading');
+
+            $('.upload-form__btn--submit').val('uploading').addClass('uploading');
         };
     });
 
