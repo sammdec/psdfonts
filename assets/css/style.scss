@@ -28,13 +28,20 @@ fieldset {
 }
 
 /*-----------------------------------*\
+	$BREAKPOINTS
+\*-----------------------------------*/
+
+$full-width: new-breakpoint(max-width 857px);
+
+
+/*-----------------------------------*\
 	$MAIN
 \*-----------------------------------*/
 
 body {
 	font-family: 'Dosis', sans-serif;
-	font-weight: 500;
-	font-size: 17px;
+	font-weight: 300;
+	font-size: 18px;
 	line-height: 1.25;
 	color: #231F20;
 	background-color: #f7f8f4;
@@ -46,12 +53,12 @@ a {
 
 .btn {
 	font-family: 'Dosis', sans-serif;
-	font-weight: 500;
+	font-weight: 300;
 	display: inline-block;
 	padding: 3px 20px 5px;
 	border-radius: 35px;
-	font-size: ceil(golden-ratio(17px, 1));
-	border: 3px solid;
+	font-size: ceil(golden-ratio(18px, 1));
+	border: 2px solid;
 	color: #231F20;
 	background-color: transparent;
 	cursor: pointer;
@@ -70,7 +77,7 @@ h1,
 	font-family: 'Playfair Display', serif;
 	font-weight: 900;
 	font-style: italic;
-	font-size: ceil(golden-ratio(17px, 4));
+	font-size: ceil(golden-ratio(18px, 4));
 	line-height: 1.1;
 	color: #DF5B57;
 }
@@ -89,7 +96,7 @@ header {
 	@include row;
 	text-align: center;
 	margin-top: 25px;
-	@include media(max-width 810px) {
+	@include media($full-width) {
 		@include span-columns(12);
 		@include shift(0);
 	}
@@ -108,9 +115,10 @@ header {
 	@include row;
 	text-align: center;
 	margin-top: 30px;
-	@include media(max-width 810px) {
+	@include media($full-width) {
 		@include span-columns(12);
 		@include shift(0);
+		@include pad;
 	}
 }
 
@@ -137,11 +145,11 @@ header {
 }
 
 .upload-form {
-	@include span-columns(6);
-	@include shift(3);
+	@include span-columns(8);
+	@include shift(2);
 	@include row;	
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .upload-form__file-name {
@@ -157,6 +165,9 @@ header {
 .split-it {
 	display: inline-block;
 	margin: 0 4px;
+	@include media($full-width) {
+		display: block;
+	}
 }
 
 .start-again.btn {
@@ -190,7 +201,6 @@ header {
 .upload-form__btn--upload.btn {
 	border-color: #DF5B57;
 	color: #DF5B57;
-	margin-bottom: 12px;
 	&:hover {
 		color: #edebd8;
 		background-color: #DF5B57;
@@ -209,6 +219,7 @@ header {
 .upload-form__btn--submit.btn {
 	border-color: #50a2a2;
 	color: #50a2a2;
+	margin-top: 12px;
 	&:hover {
 		color: #edebd8;
 		background-color: #50a2a2;
@@ -273,6 +284,11 @@ header {
 	@include shift(3);
 	@include row;	
 	margin-top: 20px;
+	@include media($full-width) {
+		@include span-columns(12);
+		@include shift(0);
+		@include pad;
+	}
 }
 
 .font-list__single-font {
@@ -350,7 +366,7 @@ footer {
 	@include span-columns(4);
 	@include shift(2);
 	font-size: 15px;
-	@include media(max-width 810px) {
+	@include media($full-width) {
 		@include span-columns(12);
 		@include shift(0);
 		text-align: center;
@@ -374,7 +390,7 @@ footer {
 	@include omega;
 	font-size: 13px;
 	text-align: right;
-	@include media(max-width 810px) {
+	@include media($full-width) {
 		@include span-columns(12);
 		text-align: center;
 		margin-top: 15px;
