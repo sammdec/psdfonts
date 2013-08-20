@@ -4,12 +4,25 @@ class Psdfonts < Sinatra::Application
 	end
 
 	post '/results' do
-		@uploadedFile = params[:psd]
-		if @uploadedFile.nil?
-			erb :index
+
+		isPsd = params[:psd]
+
+		if isPsd.nil?
+			@uploadedFile = params[:dropbox_file]
+		else
+			@uploadedFile = params[:psd]
+		end
+
+		if @uploadedFile.empty?
+			redirect '/'
 		else
 			Tempfile.open(['psd', '.psd']) do |file|
-				file.write(@uploadedFile[:tempfile].read)
+
+				if isPsd.nil?
+					file.write(open(@uploadedFile).read)
+				else
+					file.write(@uploadedFile[:tempfile].read)
+				end
 				@tmpPath = file.path
 			end
 

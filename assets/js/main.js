@@ -1,5 +1,12 @@
 $(document).ready(function(){
-    // This blocks the button default event and fires the field input but allows for styling.
+
+    function fadeInName(name) {
+        $('#js-file-name').empty();
+        $('#js-file-name').text(name);
+        $('.upload-form__file-actions').show(0,function(){
+            $(this).addClass('fade-in');
+        });
+    };
 
     var realFileField = $('#js-file-field');
     var errorWrap = $('.errors-box');
@@ -13,17 +20,28 @@ $(document).ready(function(){
     realFileField.change(function(){
         var filePath = $(this).val();
         var fileName = filePath.substr(filePath.lastIndexOf('\\')+1);
+        fadeInName(fileName);
+        GoSquared.DefaultTracker.TrackEvent('Upload method',{type: web});
+    });
 
-        $('#js-file-name').text(fileName);
-        $('.upload-form__file-actions').show(0,function(){
-            $(this).addClass('fade-in');
+    $('#js-file-dropbox').click(function(e){
+        e.preventDefault();
+        Dropbox.choose({
+            linkType: "direct",
+            multiselect: false,
+            extensions: ['.psd'],
+            success: function(files) {
+                $('#js-dropbox-field').val(files[0].link);
+                fadeInName(files[0].name);
+                GoSquared.DefaultTracker.TrackEvent('Upload method',{type: dropbox});
+            }
         });
     });
 
    formValidator = new FormValidator('psd-form', [{
     name: 'psd',
     display: '.psd',
-    rules: 'required|is_file_type[psd]',
+    rules: '',
     }], function(errors, evt) {
 
         if (errors.length > 0) {
@@ -50,35 +68,18 @@ $(document).ready(function(){
                 event.returnValue = false;
             };
         } else {
-            GoSquared.DefaultTracker.TrackEvent('Upload Success');
+
+            $('.upload-form__btn--submit').html('uploading<i></i>');
         };
     });
 
     formValidator.setMessage('required', 'You must choose a %s file');
     formValidator.setMessage('is_file_type', 'The file must be a %s');
 
-    var clipButton = $('#js-copy-btn');
-    var clip = new ZeroClipboard( clipButton, {
-        moviePath: '/assets/zero-clipboard.swf',
-        hoverClass: 'clipboard-is-hover'
-    });
-
-    clip.on('complete', function(client, args) {
-        var originalText = clipButton.text();
-        var copiedText = clipButton.data('copy-text');
-
-        clipButton.text(copiedText).addClass('attn-grab');
-        setTimeout(function(){
-            clipButton.removeClass('attn-grab');
-        },6000);
-
-        GoSquared.DefaultTracker.TrackEvent('Start over');
-    });
 
     $('.font-list__buy-font').click(function(){
         var fontName = $(this).data('font-name');
         GoSquared.DefaultTracker.TrackEvent('Buy link clicked',{name: fontName});
-        console.log(fontName);
     });
 });
 
