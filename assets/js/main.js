@@ -1,5 +1,12 @@
 $(document).ready(function(){
-    // This blocks the button default event and fires the field input but allows for styling.
+
+    function fadeInName(name) {
+        $('#js-file-name').empty();
+        $('#js-file-name').text(name);
+        $('.upload-form__file-actions').show(0,function(){
+            $(this).addClass('fade-in');
+        });
+    };
 
     var realFileField = $('#js-file-field');
     var errorWrap = $('.errors-box');
@@ -13,10 +20,10 @@ $(document).ready(function(){
     realFileField.change(function(){
         var filePath = $(this).val();
         var fileName = filePath.substr(filePath.lastIndexOf('\\')+1);
+        fadeInName(fileName);
+    });
 
-        $('#js-file-name').text(fileName);
-        $('.upload-form__file-actions').show(0,function(){
-            $(this).addClass('fade-in');
+                fadeInName(files[0].name);
         });
     });
 
