@@ -69,7 +69,7 @@ $(document).ready(function(){
             };
         } else {
 
-            $('.upload-form__btn--submit').val('uploading').addClass('uploading');
+            $('.upload-form__btn--submit').html('uploading<i></i>');
         };
     });
 
