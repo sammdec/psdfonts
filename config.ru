@@ -3,6 +3,8 @@ require 'bundler'
 Bundler.require
 
 require 'sprockets'
+require 'psd'
+require 'open-uri'
 
 if settings.production?
 	Sprockets::Sass.options[:style] = :compressed
@@ -16,8 +18,6 @@ map '/assets' do
   sprockets.append_path 'assets/js'
   run sprockets
 end
-
-require 'psd'
 
 require './helpers'
 
