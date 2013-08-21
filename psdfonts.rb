@@ -40,8 +40,10 @@ class Psdfonts < Sinatra::Application
 				else
 					file.write(@uploadedFile[:tempfile].read)
 				end
+
 				@tmpPath = file.path
 			end
+
 
 			psd = PSD.new(@tmpPath)
 			psd.parse!

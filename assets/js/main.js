@@ -8,6 +8,10 @@ $(document).ready(function(){
         });
     };
 
+    function ifDropboxIsSelected() {
+        return $('#js-dropbox-field').val().length == 0;
+    }
+
     var realFileField = $('#js-file-field');
     var errorWrap = $('.errors-box');
 
@@ -32,6 +36,7 @@ $(document).ready(function(){
             extensions: ['.psd'],
             success: function(files) {
                 $('#js-dropbox-field').val(files[0].link);
+                realFileField.rules('remove','extension' );
                 fadeInName(files[0].name);
                 GoSquared.DefaultTracker.TrackEvent('Upload method',{type: dropbox});
             }
@@ -50,9 +55,8 @@ $(document).ready(function(){
     },
     rules: {
         psd: {
-            required: function(element) {
-                return $('#js-dropbox-field').val().length == 0;
-            }
+            required: { depends: ifDropboxIsSelected() },
+            extension: 'psd'
         }
     },
     messages: {
