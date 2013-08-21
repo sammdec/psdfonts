@@ -1,25 +1,4 @@
-require 'sinatra/assetpack'
 class Psdfonts < Sinatra::Application
-	set :root, File.dirname(__FILE__)
-	register Sinatra::AssetPack
-  assets {
-  	serve '/js', from: 'assets/js'
-	 	serve '/css', from: 'assets/css'
-	 	serve '/img', from: 'assets/img'
-
-    js :app, [
-    	'/js/vendor/jquery.min.js',
-    	'/js/vendor/jquery.validate.js',
-    	'/js/vendor/ZeroClipboard.js',
-    	'js/vendor/additional-methods.js',
-    	'/js/main.js',
-      '/js/*.js'
-    ]
-
-    css :application, ['/css/*.css']
-    js_compression  :uglify    
-    css_compression :sass 
-  }
 
 	get '/' do
 		erb :index
