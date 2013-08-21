@@ -4,6 +4,7 @@ Bundler.require
 
 require 'psd'
 require 'open-uri'
+require 'sinatra/assetpack'
 
 require './helpers'
 
