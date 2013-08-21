@@ -1,5 +1,5 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
+@import "assets/css/bourbon/bourbon";
+@import "assets/css/neat/neat";
 
 /*-----------------------------------*\
 	$RESET
@@ -181,13 +181,13 @@ header {
 		background: #7f8c8d;
 		color: #edebd8;
 		i {
-			background: url(/assets/reload-hover.png) no-repeat center center;
+			background: url(/img/reload-hover.png) no-repeat center center;
 		}
 	}
 	i {
 		display: inline-block;
 		vertical-align: middle;
-		background: url(/assets/reload.png) no-repeat center center;
+		background: url(/img/reload.png) no-repeat center center;
 		min-height:22px;
 		min-width: 22px;
 		margin-right: 2px;
@@ -229,7 +229,7 @@ header {
 		width: 18px;
 		height: 18px;
 		margin-left: 7px;
-		background: url(/assets/loading.png) no-repeat center center;
+		background: url(/img/loading.png) no-repeat center center;
 		@include animation-name(spin);
 		@include animation-duration(1500ms);
 		@include animation-timing-function(linear);
@@ -316,9 +316,9 @@ header {
 	padding-left: 34px;
 	color: #DF5B57;
 	font-size: ceil(golden-ratio(17px, 0));
-	background: url(/assets/cart.png) no-repeat 8px center;
+	background: url(/img/cart.png) no-repeat 8px center;
 	&:hover {
-		background: #DF5B57 url(/assets/cart-hover.png) no-repeat 8px center;
+		background: #DF5B57 url(/img/cart-hover.png) no-repeat 8px center;
 		color: #edebd8;
 		border-color: #DF5B57;
 	}
@@ -332,11 +332,11 @@ header {
 .copy-fonts {
 	color: #34495e;
 	font-size: ceil(golden-ratio(17px, 0));
-	background: url(/assets/clipboard.png) no-repeat 10px center;
+	background: url(/img/clipboard.png) no-repeat 10px center;
 	padding-right: 12px;
 	padding-left: 30px;
 	&.clipboard-is-hover {
-		background: #34495e url(/assets/clipboard-hover.png) no-repeat 10px center;
+		background: #34495e url(/img/clipboard-hover.png) no-repeat 10px center;
 		border-color: #34495e;
 		color: #edebd8;
 	}
@@ -384,7 +384,7 @@ footer {
 	height: 14px;
 	margin: 0 2px;
 	display: inline-block;
-	background: url(/assets/heart.png) no-repeat center center;
+	background: url(/img/heart.png) no-repeat center center;
 }
 
 .shit-that-should-probably-be-said {
@@ -404,10 +404,10 @@ footer {
 \*-----------------------------------*/
 
 body:before {
-    content: url(/assets/reload-hover.png) 
-    url(/assets/clipboard-hover.png) 
-    url(/assets/cart-hover.png)
-    url(/assets/loading.png);
+    content: url(/img/reload-hover.png) 
+    url(/img/clipboard-hover.png) 
+    url(/img/cart-hover.png)
+    url(/img/loading.png);
     display:none;
     visibility: hidden;
 }
