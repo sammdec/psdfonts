@@ -1,4 +1,5 @@
 class Psdfonts < Sinatra::Application
+	set :environment, :production
 	register Sinatra::AssetPack
   assets {
   	serve '/js', from: 'assets/js'
@@ -8,7 +9,7 @@ class Psdfonts < Sinatra::Application
     js :application, [
     	'/js/jquery.js',
     	'/js/ZeroClipboard.js',
-    	'/js/validate.js',
+    	'/js/additional-methods.js',
     	'/js/main.js'
     ]
 
