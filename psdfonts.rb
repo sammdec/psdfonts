@@ -1,3 +1,4 @@
+require 'sinatra/assetpack'
 class Psdfonts < Sinatra::Application
 	set :root, File.dirname(__FILE__)
 	register Sinatra::AssetPack
