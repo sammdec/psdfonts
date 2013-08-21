@@ -11,7 +11,6 @@ class Psdfonts < Sinatra::Application
 
     css :application, ['/css/*.css'] 
 
-    js_compression :closure
     css_compression :sass
   }
 
