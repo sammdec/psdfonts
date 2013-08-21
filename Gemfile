@@ -13,10 +13,9 @@ gem 'puma'
 gem 'erubis'
 
 # asset pipeline
-gem 'sprockets'
-# for sprockets sass integration
-gem 'sprockets-sass'
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 gem 'sass'
+gem 'uglifier'
 
 # cool mixins
 gem 'bourbon'
