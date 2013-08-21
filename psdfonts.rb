@@ -5,11 +5,8 @@ class Psdfonts < Sinatra::Application
 	 	serve '/css', from: 'assets/css'
 	 	serve '/img', from: 'assets/img'
 
-	 	js :vendor, [
-	 		'/js/vendor/*.js'
-	 	]
-
     js :application, [
+    	'/js/jquery.js',
       '/js/*.js'
     ]
 
