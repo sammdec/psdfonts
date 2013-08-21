@@ -38,43 +38,29 @@ $(document).ready(function(){
         });
     });
 
-   formValidator = new FormValidator('psd-form', [{
-    name: 'psd',
-    display: '.psd',
-    rules: '',
-    }], function(errors, evt) {
-
-        if (errors.length > 0) {
-            if (evt){
-                evt.preventDefault();
-            } else if (event) {
-                event.returnValue = false;
+   $('.upload-form').validate({
+    ignore: "",
+    errorLabelContainer: '.errors-box',
+    errorElement: 'p',
+    errorClass: 'errors-box__message',
+    highlight: function(element, errorClass, validClass) {
+        $('.errors-box').show(0, function(){
+            $(this).addClass('fade-in');
+        })
+    },
+    rules: {
+        psd: {
+            required: function(element) {
+                return $('#js-dropbox-field').val().length == 0;
             }
-            
-            var errorString = '';
-
-            for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
-                errorString += '<p class="errors-box__message">' + errors[i].message + '</p>';
-            }
-
-            errorWrap.html(errorString).show(0,function(){
-                $(this).addClass('fade-in');
-            });
-
-            // This stops the form from firing if there are errors
-            if (evt && evt.preventDefault) {
-                evt.preventDefault();
-            } else if (event) {
-                event.returnValue = false;
-            };
-        } else {
-
-            $('.upload-form__btn--submit').html('uploading<i></i>');
-        };
-    });
-
-    formValidator.setMessage('required', 'You must choose a %s file');
-    formValidator.setMessage('is_file_type', 'The file must be a %s');
+        }
+    },
+    messages: {
+        psd: {
+            required: "You need to choose a psd"
+        }
+    }
+   });
 
 
     $('.font-list__buy-font').click(function(){
