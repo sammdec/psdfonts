@@ -1,6 +1,5 @@
 class Psdfonts < Sinatra::Application
 	register Sinatra::AssetPack
-
   assets {
   	serve '/js', from: 'assets/js'
 	 	serve '/css', from: 'assets/css'
