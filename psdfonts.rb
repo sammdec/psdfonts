@@ -6,7 +6,10 @@ class Psdfonts < Sinatra::Application
 	 	serve '/img', from: 'assets/img'
 
     js :app, [
-    	'/js/vendor/*.js',
+    	'/js/vendor/jquery.min.js',
+    	'/js/vendor/jquery.validate.js',
+    	'/js/vendor/ZeroClipboard.js',
+    	'js/vendor/additional-methods.js',
     	'/js/main.js',
       '/js/*.js'
     ]
