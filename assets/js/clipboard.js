@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var clipButton = $('#js-copy-btn');
     var clip = new ZeroClipboard( clipButton, {
-        moviePath: '/assets/zero-clipboard.swf',
+        moviePath: '/zero-clipboard.swf',
         hoverClass: 'clipboard-is-hover'
     });
 
