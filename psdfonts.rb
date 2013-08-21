@@ -7,16 +7,15 @@ class Psdfonts < Sinatra::Application
 
     js :application, [
     	'/js/vendor/jquery.min.js',
-    	'/js/vendor/jquery.validate.js',
-    	'/js/vendor/ZeroClipboard.js',
+    	'/js/vendor/*.js',
     	'js/vendor/additional-methods.js',
     	'/js/main.js',
       '/js/*.js'
     ]
 
     css :application, ['/css/*.css'] 
-    
-    js_compression :closure, :level => "SIMPLE_OPTIMIZATIONS"
+
+    js_compression :jsmin
     css_compression :sass
   }
 
