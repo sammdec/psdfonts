@@ -1,3 +1,4 @@
+require 'sinatra/assetpack'
 class Psdfonts < Sinatra::Application
 
 	get '/' do
