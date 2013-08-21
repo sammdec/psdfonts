@@ -6,7 +6,7 @@
     
     <link href='http://fonts.googleapis.com/css?family=Dosis:300,600|Playfair+Display:900italic' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="/assets/favicon.ico">
-    <link href="/assets/style.css" media="screen" rel="stylesheet" type="text/css">
+    <%= css :application, :media => 'screen' %>
   </head>
 	<body>
 
@@ -19,6 +19,6 @@
     <% end %>
     
     <script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropins.js" id="dropboxjs" data-app-key="pxvyhywo2blp1fy"></script>
-		<script src="/assets/app.js"></script>
+		<%= js  :app %>
 	</body>
 </html>
