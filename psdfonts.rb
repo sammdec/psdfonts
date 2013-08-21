@@ -8,6 +8,7 @@ class Psdfonts < Sinatra::Application
     js :application, [
     	'/js/jquery.js',
     	'/js/ZeroClipboard.js',
+    	'/js/validate.js',
     	'/js/main.js'
     ]
 
