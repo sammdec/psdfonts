@@ -15,7 +15,6 @@ gem 'erubis'
 # asset pipeline
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 gem 'sass'
-gem 'uglifier'
 
 # cool mixins
 gem 'bourbon'
