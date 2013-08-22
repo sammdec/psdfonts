@@ -31,6 +31,7 @@ $(document).ready(function(){
             multiselect: false,
             extensions: ['.psd'],
             success: function(files) {
+                realFileField.html(realFileField.html());
                 $('#js-dropbox-field').val(files[0].link);
                 fadeInName(files[0].name);
                 GoSquared.DefaultTracker.TrackEvent('Upload method',{type: dropbox});
@@ -52,7 +53,8 @@ $(document).ready(function(){
         psd: {
             required: function(element) {
                 return $('#js-dropbox-field').val().length == 0;
-            }
+            },
+            extension: 'psd'
         }
     },
     messages: {
