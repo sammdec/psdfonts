@@ -59,8 +59,12 @@ $(document).ready(function(){
     },
     messages: {
         psd: {
-            required: "You need to choose a psd"
+            required: "You need to choose a psd",
+            extension: "Your file must be a psd"
         }
+    },
+    success: function() {
+        $('.upload-form__btn--submit').html('uploading <i></i>');
     }
    });
 
