@@ -214,21 +214,24 @@ header {
 }
 
 .upload-form__btn--dropbox.btn {
-	border-color: #007ee5;
-	color: #007ee5;
+	border-color: #DF5B57;
+	color: #DF5B57;
 	&:hover {
 		color: #edebd8;
-		background-color: #007ee5;
+		background-color: #DF5B57;
 	}
 }
 
 .upload-form__btn--submit.btn {
-	border-color: #50a2a2;
-	color: #50a2a2;
+	border-color: #00CB63;
+	color: #00CB63;
 	margin-top: 12px;
 	&:hover {
 		color: #edebd8;
-		background-color: #50a2a2;
+		background-color: #00CB63;
+		i {
+			background: url(/img/loading-hover.png) no-repeat center center;
+		}
 	}
 	i {
 		display: inline-block;
@@ -424,7 +427,8 @@ body:before {
     content: url(/img/reload-hover.png) 
     url(/img/clipboard-hover.png) 
     url(/img/cart-hover.png)
-    url(/img/loading.png);
+    url(/img/loading.png)
+    url(/img/loading-hover.png);
     display:none;
     visibility: hidden;
 }
