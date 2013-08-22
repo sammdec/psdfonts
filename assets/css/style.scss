@@ -122,6 +122,12 @@ header {
 	}
 }
 
+.site-title {
+	@include animation-name(fadeIn);
+	@include animation-duration(1000ms);
+	@include animation-fill-mode(both);
+}
+
 /*-----------------------------------*\
 	$FORM
 \*-----------------------------------*/
@@ -270,6 +276,17 @@ header {
 	}
 	100% {
 		@include transform(scale(1));
+	}
+}
+
+@include keyframes(fadeIn) {
+	0% {
+		opacity: 0;
+		@include transform(translateY(-20px));
+	}
+	100% {
+		opacity: 1;
+		@include transform(translateY(0));
 	}
 }
 
