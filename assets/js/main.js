@@ -63,7 +63,7 @@ $(document).ready(function(){
             extension: "Your file must be a psd"
         }
     },
-    success: function() {
+    submitHandler: function() {
         $('.upload-form__btn--submit').html('uploading <i></i>');
     }
    });
