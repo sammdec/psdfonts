@@ -31,7 +31,7 @@ $(document).ready(function(){
             multiselect: false,
             extensions: ['.psd'],
             success: function(files) {
-                realFileField.html(realFileField.html());
+                realFileField.replaceWith(realFileField = realFileField.clone(true));
                 $('#js-dropbox-field').val(files[0].link);
                 fadeInName(files[0].name);
                 GoSquared.DefaultTracker.TrackEvent('Upload method',{type: dropbox});

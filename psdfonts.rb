@@ -1,5 +1,5 @@
 class Psdfonts < Sinatra::Application
-	set :environment, :production
+	#set :environment, :production
 	register Sinatra::AssetPack
   assets {
   	serve '/js', from: 'assets/js'
