@@ -14,6 +14,7 @@ $(document).ready(function(){
     $('#js-file-btn').click(function(e){
         e.preventDefault();
         realFileField.click();
+        GoSquared.DefaultTracker.TrackEvent('Upload method - Web');
         errorWrap.removeClass('fade-in').hide();
     });
 
@@ -21,11 +22,11 @@ $(document).ready(function(){
         var filePath = $(this).val();
         var fileName = filePath.substr(filePath.lastIndexOf('\\')+1);
         fadeInName(fileName);
-        GoSquared.DefaultTracker.TrackEvent('Upload method',{type: web});
     });
 
     $('#js-file-dropbox').click(function(e){
         e.preventDefault();
+        GoSquared.DefaultTracker.TrackEvent('Upload method - Dropbox');
         Dropbox.choose({
             linkType: "direct",
             multiselect: false,
@@ -34,7 +35,6 @@ $(document).ready(function(){
                 realFileField.replaceWith(realFileField = realFileField.clone(true));
                 $('#js-dropbox-field').val(files[0].link);
                 fadeInName(files[0].name);
-                GoSquared.DefaultTracker.TrackEvent('Upload method',{type: dropbox});
             }
         });
     });
