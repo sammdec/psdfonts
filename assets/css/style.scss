@@ -86,6 +86,10 @@ h1,
 	font-size: 1.5rem;
 }
 
+p {
+	margin-bottom: 7px;
+}
+
 /*-----------------------------------*\
 	$CONTENT
 \*-----------------------------------*/
@@ -126,6 +130,10 @@ header {
 	@include animation-name(fadeIn);
 	@include animation-duration(1000ms);
 	@include animation-fill-mode(both);
+}
+
+.upload-notice {
+	font-size: ceil(golden-ratio(24px, -1));
 }
 
 /*-----------------------------------*\
