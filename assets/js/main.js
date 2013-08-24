@@ -66,6 +66,7 @@ $(document).ready(function(){
     submitHandler: function(form) {
         form.submit();
         $('.upload-form__btn--submit').html('uploading <i></i>');
+        GoSquared.DefaultTracker.TrackEvent('Start Upload');
     }
    });
 
@@ -84,7 +85,7 @@ $(document).ready(function(){
             clipButton.removeClass('attn-grab');
         },6000);
 
-        GoSquared.DefaultTracker.TrackEvent('Start over');
+        GoSquared.DefaultTracker.TrackEvent('Upload another');
     });
 
 
