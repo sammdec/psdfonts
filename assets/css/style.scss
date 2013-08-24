@@ -132,8 +132,12 @@ header {
 	@include animation-fill-mode(both);
 }
 
+.strapline {
+	font-size: 18px;
+}
+
 .upload-notice {
-	font-size: ceil(golden-ratio(24px, -1));
+	font-size: 18px;
 }
 
 /*-----------------------------------*\
