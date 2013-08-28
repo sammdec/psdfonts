@@ -9,14 +9,16 @@ GEM
     erubis (2.7.0)
     hashie (2.0.5)
     jsmin (1.0.1)
-    neat (1.3.0)
+    neat (1.4.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
-    psd (0.4.1)
+    oily_png (1.1.0)
+      chunky_png (~> 1.2.7)
+    psd (1.0.0)
       bindata
-      chunky_png
-      psd-enginedata
-    psd-enginedata (0.2.3)
+      oily_png
+      psd-enginedata (~> 1.0)
+    psd-enginedata (1.0.0)
       hashie (~> 2.0)
     puma (2.5.1)
       rack (>= 1.1, < 2.0)
