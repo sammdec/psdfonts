@@ -306,6 +306,28 @@ header {
 }
 
 /*-----------------------------------*\
+	$NOTICE
+\*-----------------------------------*/
+.notice {
+	@include row;
+	@include span-columns(8);
+	@include shift(2);
+	text-align: center;
+	margin-top: 20px;
+	a {
+		font-weight: 600;
+	}
+}
+
+
+.notice__header {
+	font-weight: 600;
+	color: #00CB63;
+	font-size: 24px;
+}
+
+
+/*-----------------------------------*\
 	$RESULTS
 \*-----------------------------------*/
 
