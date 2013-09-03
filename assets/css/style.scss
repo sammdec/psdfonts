@@ -209,10 +209,12 @@ header {
 		min-height:22px;
 		min-width: 22px;
 		margin-right: 2px;
-		@include animation-name(spin);
-		@include animation-duration(1500ms);
-		@include animation-timing-function(linear);
-		@include animation-iteration-count(infinite);
+		&.spin {
+			@include animation-name(spin);
+			@include animation-duration(1500ms);
+			@include animation-timing-function(linear);
+			@include animation-iteration-count(infinite);
+		}
 	}
 }
 
