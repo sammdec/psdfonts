@@ -52,15 +52,6 @@ class Psdfonts < Sinatra::Application
 					x[:name].gsub(/-/, ' - ').gsub(/(?<=[a-z])(?=[A-Z])/, ' ') 
 				end.uniq 
 
-				singleFont = key_occurences(psdHash, :font).flatten!.map do |x| 
-					x = { :name => x[:name], :sizes => x[:sizes] }
-
-				end.uniq 
-
-				@singleFont = singleFont.group_by(&:keys).map do |k, v| 
-					{k.first => v.flat_map(&:values).flatten.uniq}
-				end
-
 			erb :results
 		end
 	end
