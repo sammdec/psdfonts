@@ -14,6 +14,15 @@
 			</div> <!--  .font-list__link-right -->
 		</div> <!--  .font-list__single-font -->
 	<% end %>
+
+	<% @singleFont.each do |font| %>
+		<%= font %>
+		<hr>
+	<% end %>
+
+	<hr>
+	<hr>
+	<%= p @singleFont %>
 	</div> <!--  .font-list -->
 
 	<div class="all-of-the-extras">
