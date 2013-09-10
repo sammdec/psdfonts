@@ -47,13 +47,12 @@ class Psdfonts < Sinatra::Application
 				psd.parse!
 				psdHash = psd.tree.to_hash
 				file.close!
+			end
 
-				@singleFonts =
+			@singleFonts =
 				key_occurences(psdHash, :font).flatten!.map do |x|
 					x[:name].gsub(/-/, ' - ').gsub(/(?<=[a-z])(?=[A-Z])/, ' ') 
 				end.uniq 
-
-			end
 
 			erb :results
 		end
