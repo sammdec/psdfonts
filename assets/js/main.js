@@ -40,7 +40,6 @@ $(document).ready(function(){
     });
 
    $('.upload-form').validate({
-    ignore: "",
     errorLabelContainer: '.errors-box',
     errorElement: 'p',
     errorClass: 'errors-box__message',
@@ -50,17 +49,13 @@ $(document).ready(function(){
         })
     },
     rules: {
-        psd: {
-            required: function(element) {
-                return $('#js-dropbox-field').val().length == 0;
-            },
-            extension: 'psd'
+        dropbox_file: {
+            required: true
         }
     },
     messages: {
-        psd: {
-            required: "You need to choose a psd",
-            extension: "Your file must be a psd"
+        dropbox_file: {
+            required: "You need to choose a psd"
         }
     },
     submitHandler: function(form) {
