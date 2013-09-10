@@ -310,7 +310,7 @@ header {
 	@include span-columns(8);
 	@include shift(2);
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 20px;
 	a {
 		font-weight: 600;
 	}
@@ -494,4 +494,5 @@ body:before {
 
 .four-oh-four__body {
 	margin-bottom: 20px;
+	font-size: ceil(golden-ratio(17px, 1));
 }
