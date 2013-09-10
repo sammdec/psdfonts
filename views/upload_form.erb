@@ -3,19 +3,15 @@
 	<%= erb :errors %> 
 
 	<fieldset>
-		<input type="file" class="hide-completely" id="js-file-field" name="psd">
-		<button class="upload-form__btn--upload btn" id="js-file-btn">choose a psd</button>
-		<span class="split-it">or</span>
-		<button class="upload-form__btn--dropbox btn" id="js-file-dropbox">pick from dropbox</button>
+		<button class="upload-form__btn--dropbox btn" id="js-file-dropbox">choose from dropbox</button>
 		<input type="hidden" id="js-dropbox-field" name="dropbox_file">
+
+		<button class="upload-form__btn--submit btn">upload</button>
 		
 		<div class="faded-out upload-form__file-actions">
-
 			<p class="upload-form__file-name" id="js-file-name"></p>
 			<a href="/" class="start-again btn"><i></i> start over?</a>
 		</div> <!--  .faded-out upload-form__file-actions -->
 	</fieldset>
-
-	<button class="upload-form__btn--submit btn">upload</button>
 
 </form>

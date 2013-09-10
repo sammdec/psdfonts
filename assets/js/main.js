@@ -8,21 +8,7 @@ $(document).ready(function(){
         });
     };
 
-    var realFileField = $('#js-file-field');
     var errorWrap = $('.errors-box');
-
-    $('#js-file-btn').click(function(e){
-        e.preventDefault();
-        realFileField.click();
-        GoSquared.DefaultTracker.TrackEvent('Upload method - Web');
-        errorWrap.removeClass('fade-in').hide();
-    });
-
-    realFileField.change(function(){
-        var filePath = $(this).val();
-        var fileName = filePath.substr(filePath.lastIndexOf('\\')+1);
-        fadeInName(fileName);
-    });
 
     $('#js-file-dropbox').click(function(e){
         e.preventDefault();
@@ -32,8 +18,7 @@ $(document).ready(function(){
             multiselect: false,
             extensions: ['.psd'],
             success: function(files) {
-                realFileField.replaceWith(realFileField = realFileField.clone(true));
-                $('#js-dropbox-field').val(files[0].link);
+                $('#js-dropbox-field').val(files[0].link).valid();
                 fadeInName(files[0].name);
             }
         });
@@ -47,20 +32,16 @@ $(document).ready(function(){
     highlight: function(element, errorClass, validClass) {
         $('.errors-box').show(0, function(){
             $(this).addClass('fade-in');
-        })
+        });
     },
     rules: {
-        psd: {
-            required: function(element) {
-                return $('#js-dropbox-field').val().length == 0;
-            },
-            extension: 'psd'
+        dropbox_file: {
+            required: true
         }
     },
     messages: {
-        psd: {
-            required: "You need to choose a psd",
-            extension: "Your file must be a psd"
+        dropbox_file: {
+            required: "You need to choose a psd"
         }
     },
     submitHandler: function(form) {

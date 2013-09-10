@@ -22,28 +22,18 @@ class Psdfonts < Sinatra::Application
 
 	post '/results' do
 
-		isPsd = params[:psd]
-
-		if isPsd.nil?
-			@uploadedFile = params[:dropbox_file]
-		else
-			@uploadedFile = params[:psd]
-		end
-
-		if @uploadedFile.empty?
+			uploadedFile = params[:dropbox_file]
+			tmpPath = nil
+			
+		if uploadedFile.empty?
 			redirect '/'
 		else
 			Tempfile.open(['psd', '.psd']) do |file|
-
-				if isPsd.nil?
-					file.write(open(@uploadedFile).read)
-				else
-					file.write(@uploadedFile[:tempfile].read)
-				end
-				@tmpPath = file.path
+				file.write(open(uploadedFile).read)
+				tmpPath = file.path
 			end
 
-			psd = PSD.new(@tmpPath)
+			psd = PSD.new(tmpPath)
 			psd.parse!
 			psdHash = psd.tree.to_hash
 

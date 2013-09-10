@@ -218,15 +218,6 @@ header {
 	}
 }
 
-.upload-form__btn--upload.btn {
-	border-color: #DF5B57;
-	color: #DF5B57;
-	&:hover {
-		color: #edebd8;
-		background-color: #DF5B57;
-	}
-}
-
 .upload-form__btn--dropbox.btn {
 	border-color: #DF5B57;
 	color: #DF5B57;
@@ -240,6 +231,7 @@ header {
 	border-color: #00CB63;
 	color: #00CB63;
 	margin-top: 12px;
+	margin-left: 5px;
 	&:hover {
 		color: #edebd8;
 		background-color: #00CB63;
@@ -335,6 +327,16 @@ header {
 
 .spell-it-out {
 	text-align: left;
+}
+
+.no-fonts {
+	@include span-columns(8);
+	@include shift(2);
+	@include row;	
+	font-size: ceil(golden-ratio(17px, 1));
+	font-weight: bold;
+	margin-top: 30px;
+	text-align: center;
 }
 
 .font-list {
