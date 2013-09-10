@@ -1,8 +1,16 @@
 <section class="wrapper">
 	<%= erb :header %>
 
+	<% if @singleFonts.empty? %>
+	<div class="no-fonts">
+		<p class="no-fonts__text">Ruh-roh! Looks like there weren't any fonts in that PSD.</p> <!--  .no-fonts -->
+		<a href="/" class="start-again btn"><i class="spin"></i> start over?</a>
+	</div> <!--  .no-fonts -->
+	<% else %>
+
 	<div class="spell-it-out">
 		<p>Here are all the fonts from your psd, you can see if they are available as web fonts for purchase at MyFonts or simply copy the list of fonts to your clipboard by clicking the button below.</p>
+
 	</div> <!--  .intro -->
 	
 	<div class="font-list">
@@ -30,4 +38,6 @@
 		<%= font %>
 		<% end end %>
 	</div> <!-- #clipboard_text  -->
+
+	<% end %>
 </section> <!--  .wrapper -->
