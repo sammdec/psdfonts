@@ -33,6 +33,7 @@ class Psdfonts < Sinatra::Application
 		if @uploadedFile.empty?
 			redirect '/'
 		else
+			psdHash = nil
 			Tempfile.open(['psd', '.psd']) do |file|
 
 				if isPsd.nil?
@@ -40,12 +41,13 @@ class Psdfonts < Sinatra::Application
 				else
 					file.write(@uploadedFile[:tempfile].read)
 				end
-				@tmpPath = file.path
-			end
 
-			psd = PSD.new(@tmpPath)
-			psd.parse!
-			psdHash = psd.tree.to_hash
+				tmpPath = file.path
+				psd = PSD.new(tmpPath)
+				psd.parse!
+				psdHash = psd.tree.to_hash
+				file.close!
+			end
 
 			@singleFonts =
 				key_occurences(psdHash, :font).flatten!.map do |x|
