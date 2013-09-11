@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Ruby duh!!
-ruby '1.9.3'
+ruby '2.0.0'
 
 # simple DSL router
 gem 'sinatra'
