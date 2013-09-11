@@ -1,16 +1,13 @@
 source 'https://rubygems.org'
 
 # Ruby duh!!
-ruby '2.0.0'
+ruby '1.9.3'
 
 # simple DSL router
 gem 'sinatra'
 
 # Fast server
-gem 'puma'
-
-# faster erb
-gem 'erubis'
+gem 'thin'
 
 # asset pipeline
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'

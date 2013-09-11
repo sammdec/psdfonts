@@ -22,26 +22,24 @@ class Psdfonts < Sinatra::Application
 
 	post '/results' do
 
-			uploadedFile = params[:dropbox_file]
-			tmpPath = nil
+		uploadedFile = params[:dropbox_file]
 			
 		if uploadedFile.empty?
 			redirect '/'
 		else
-			Tempfile.open(['psd', '.psd']) do |file|
-				file.write(open(uploadedFile).read)
-				tmpPath = file.path
-			end
-
-			psd = PSD.new(tmpPath)
+			tempFile = Tempfile.new(['psd', '.psd'])
+			tempFile.write(open(uploadedFile).read)
+			tempPath = tempFile.path
+			
+			psd = PSD.new(tempPath)
 			psd.parse!
 			psdHash = psd.tree.to_hash
-
 			@singleFonts =
-				key_occurences(psdHash, :font).flatten!.map do |x|
-					x[:name].gsub(/-/, ' - ').gsub(/(?<=[a-z])(?=[A-Z])/, ' ') 
-				end.uniq 
+			key_occurences(psdHash, :font).flatten!.map do |x|
+				x[:name].gsub(/-/, ' - ').gsub(/(?<=[a-z])(?=[A-Z])/, ' ') 
+			end.uniq
 
+			tempFile.close!
 			erb :results
 		end
 	end
