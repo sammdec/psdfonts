@@ -7,7 +7,7 @@ ruby '2.0.0'
 gem 'sinatra'
 
 # Fast server
-gem 'thin'
+gem 'puma'
 
 # asset pipeline
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
