@@ -1,12 +1,7 @@
 *.DS_Store
-assets/.DS_Store
-vendor/bundle/.DS_Store
 vendor/bundle/.DS_Store
 uploads/
-
-assets/img/.DS_Store
-
 .DS_Store
 .sass-cache/*
-
 node_modules/
+package.json/
