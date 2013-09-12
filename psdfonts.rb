@@ -1,20 +1,5 @@
 class Psdfonts < Sinatra::Application
 	#set :environment, :production
-	register Sinatra::AssetPack
-  assets {
-  	serve '/js', from: 'assets/js'
-	 	serve '/css', from: 'assets/css'
-	 	serve '/img', from: 'assets/img'
-
-    js :application, [
-    	'/js/ZeroClipboard.js',
-    	'/js/main.js'
-    ]
-
-    css :application, ['/css/*.css'] 
-
-    css_compression :sass
-  }
 
 	get '/' do
 		erb :index

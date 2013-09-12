@@ -9,10 +9,6 @@ gem 'sinatra'
 # Fast server
 gem 'puma'
 
-# asset pipeline
-gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
-gem 'sass'
-
 # cool mixins
 gem 'bourbon'
 # nice semantic grid
