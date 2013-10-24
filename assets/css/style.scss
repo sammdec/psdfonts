@@ -19,6 +19,20 @@ fieldset {
 }
 
 /*-----------------------------------*\
+	$PRELOADS
+\*-----------------------------------*/
+
+body:before {
+    content: url(/img/reload-hover.png)
+    url(/img/clipboard-hover.png)
+    url(/img/cart-hover.png)
+    url(/img/loading.png)
+    url(/img/loading-hover.png);
+    display:none;
+    visibility: hidden;
+}
+
+/*-----------------------------------*\
 	$OBJECTS
 \*-----------------------------------*/
 
@@ -62,6 +76,7 @@ a {
 	color: #231F20;
 	background-color: transparent;
 	cursor: pointer;
+	outline: none;
 	@include transition(all 0.2s ease-in-out);
 	&:hover {
 		@include transform(scale(1.02));
@@ -166,7 +181,7 @@ header {
 .upload-form {
 	@include span-columns(8);
 	@include shift(2);
-	@include row;	
+	@include row;
 	text-align: center;
 	margin-top: 20px;
 }
@@ -338,7 +353,7 @@ header {
 .no-fonts {
 	@include span-columns(8);
 	@include shift(2);
-	@include row;	
+	@include row;
 	font-size: ceil(golden-ratio(17px, 1));
 	margin-top: 30px;
 	text-align: center;
@@ -347,7 +362,7 @@ header {
 .font-list {
 	@include span-columns(6);
 	@include shift(3);
-	@include row;	
+	@include row;
 	margin-top: 20px;
 	@include media($full-width) {
 		@include span-columns(12);
@@ -461,20 +476,6 @@ footer {
 		text-align: center;
 		margin-top: 15px;
 	}
-}
-
-/*-----------------------------------*\
-	$PRELOADS
-\*-----------------------------------*/
-
-body:before {
-    content: url(/img/reload-hover.png) 
-    url(/img/clipboard-hover.png) 
-    url(/img/cart-hover.png)
-    url(/img/loading.png)
-    url(/img/loading-hover.png);
-    display:none;
-    visibility: hidden;
 }
 
 /*-----------------------------------*\
