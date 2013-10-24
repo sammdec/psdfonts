@@ -1,5 +1,5 @@
 *.DS_Store
-vendor/bundle/.DS_Store
+vendor/
 uploads/
 .DS_Store
 .sass-cache/*
