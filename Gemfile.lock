@@ -1,21 +1,20 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    bindata (1.6.0)
+    bindata (2.0.0)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
-    chunky_png (1.2.8)
+    chunky_png (1.2.9)
     hashie (2.0.5)
-    neat (1.4.0)
+    neat (1.5.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
-    oily_png (1.1.0)
-      chunky_png (~> 1.2.7)
-    psd (1.1.1)
+    psd (2.0.0)
       bindata
-      oily_png
+      chunky_png
       psd-enginedata (~> 1.0)
+      rake
     psd-enginedata (1.0.0)
       hashie (~> 2.0)
     puma (2.5.1)
@@ -23,6 +22,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
+    rake (10.1.1)
     sass (3.2.10)
     shotgun (0.9)
       rack (>= 1.0)
@@ -37,9 +37,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon
-  neat
-  psd
+  bourbon (~> 3.1.8)
+  neat (~> 1.5.0)
+  psd (~> 2.0.0)
   puma
   shotgun
   sinatra
