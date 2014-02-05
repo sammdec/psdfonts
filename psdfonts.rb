@@ -10,7 +10,7 @@ class Psdfonts < Sinatra::Application
 		uploadedFile = params[:dropbox_file]
 
 		if uploadedFile.empty?
-			redirect '/'
+			redirect '/', warning: "You didnt choose a psd file"
 		else
 			tempFile = Tempfile.new(['psd', '.psd'])
 			tempFile.write(open(uploadedFile).read)

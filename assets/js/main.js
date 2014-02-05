@@ -1,15 +1,5 @@
 $(document).ready(function(){
 
-    function fadeInName(name) {
-        $('#js-file-name').empty();
-        $('#js-file-name').text(name);
-        $('.upload-form__file-actions').show(0,function(){
-            $(this).addClass('fade-in');
-        });
-    };
-
-    var errorWrap = $('.errors-box');
-
     $('#js-file-dropbox').click(function(e){
         e.preventDefault();
         GoSquared.DefaultTracker.TrackEvent('Upload method - Dropbox');
@@ -69,10 +59,9 @@ $(document).ready(function(){
         GoSquared.DefaultTracker.TrackEvent('Upload another');
     });
 
-
+    // Event for seeing if a user goes to buy a font
     $('.font-list__buy-font').click(function(){
-        var fontName = $(this).data('font-name');
-        GoSquared.DefaultTracker.TrackEvent('Buy link clicked',{name: fontName});
+        _gs('event', 'Font buy link clicked');
     });
 });
 
