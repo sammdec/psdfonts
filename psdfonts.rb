@@ -33,4 +33,9 @@ class Psdfonts < Sinatra::Application
   	erb :fourohfour
 	end
 
+	error do
+		@error = request.env['sinatra_error']
+		erb :fiveohoh
+	end
+
 end
