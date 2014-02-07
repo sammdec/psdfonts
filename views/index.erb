@@ -1,16 +1,16 @@
-<section class="wrapper">
+<div class="container">
+    <section class="intro">
+      <h1 class="container site-title">
+        <a href="/">psd fonts</a>
+      </h1> <!--  .container -->
+      <h2 class="strapline">Figure out what fonts are being used in a psd without trawling through badly labelled layers.</h2>
+    </section>
 
-	<%= erb :header %>
-	
-	<div class="intro">
-		<p class="strapline">Figure out what fonts are being used in a psd without trawling through badly labelled layers.</p>
+  	<%= erb :upload_form %>
+</div>
 
-		<p class="upload-notice">I have <strong>removed the manual upload</strong> as users were having issues with browser time out's. This should give everyone a better experience by not being held up slow connections.</p>
-
-	</div> <!--  .intro -->
-
-	<%= erb :upload_form %>
-
-	<%= erb :notice %>
-
-</section> <!--  .wrapper -->
+<div class="container">
+  <div class="notice">
+    <p>Don't have Dropbox? It's awesome & free <a href="http://db.tt/HKCe5PfV"><strong>check it out</strong></a>.</p>
+  </div> <!--  .notice -->
+</div> <!--  .container -->

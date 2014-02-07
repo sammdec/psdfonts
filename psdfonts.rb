@@ -9,9 +9,7 @@ class Psdfonts < Sinatra::Application
 
 		uploadedFile = params[:dropbox_file]
 
-		if uploadedFile.empty?
-			redirect '/'
-		else
+		if !uploadedFile.empty?
 			tempFile = Tempfile.new(['psd', '.psd'])
 			tempFile.write(open(uploadedFile).read)
 			tempPath = tempFile.path
@@ -26,11 +24,18 @@ class Psdfonts < Sinatra::Application
 
 			tempFile.close!
 			erb :results
+		else
+			redirect '/'
 		end
 	end
 
 	not_found do
   	erb :fourohfour
+	end
+
+	error do
+		@error = request.env['sinatra_error']
+		erb :fiveohoh
 	end
 
 end

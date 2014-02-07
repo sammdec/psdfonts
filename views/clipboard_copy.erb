@@ -1,0 +1,6 @@
+<% singleFonts.each_with_index do |font, index|
+    if index != singleFonts.length - 1 %>
+<%= font %>,
+<% else %>
+<%= font %>
+<% end end %>

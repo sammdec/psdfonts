@@ -14,4 +14,8 @@ helpers do
 	def purchase_link(item)
 		return 'http://www.myfonts.com/search/' + item.gsub(/ - /,'+').gsub(/ /, '+') + '/fonts/'
 	end
+
+  def partial (template, locals = {})
+    erb(template, :layout => false, :locals => locals)
+  end
 end
