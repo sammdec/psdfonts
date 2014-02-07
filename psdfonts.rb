@@ -6,7 +6,6 @@ class Psdfonts < Sinatra::Application
 	end
 
 	post '/results' do
-
 		uploadedFile = params[:dropbox_file]
 
 		if !uploadedFile.empty?
@@ -17,8 +16,7 @@ class Psdfonts < Sinatra::Application
 			psd = PSD.new(tempPath)
 			psd.parse!
 			psdHash = psd.tree.to_hash
-			@singleFonts =
-			key_occurences(psdHash, :font).flatten!.map do |x|
+			@singleFonts = key_occurences(psdHash, :font).flatten!.map do |x|
 				x[:name].gsub(/-/, ' - ').gsub(/(?<=[a-z])(?=[A-Z])/, ' ')
 			end.uniq
 
