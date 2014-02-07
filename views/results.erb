@@ -1,28 +1,28 @@
-<section class="wrapper">
-	<%= erb :header %>
-
-	<% if @singleFonts.empty? %>
+<div class="container">
+<h1 class="site-title">
+  <a href="/">psd fonts</a>
+</h1> <!--  .container -->
+<% if @singleFonts.empty? %>
 	<div class="no-fonts">
 		<p class="no-fonts__text">Ruh-roh! Looks like there weren't any fonts in that PSD.</p> <!--  .no-fonts -->
 		<a href="/" class="start-again btn"><i class="spin"></i> start over?</a>
 	</div> <!--  .no-fonts -->
-	<% else %>
+<% else %>
 
-	<div class="spell-it-out">
-		<p>Here are all the fonts from your psd, you can see if they are available as web fonts for purchase at MyFonts or simply copy the list of fonts to your clipboard by clicking the button below.</p>
+	<h2>Here are all the fonts we found from your psd, if there is a bug for whatever reason please file an issue at <a href="https://github.com/samjbmason/psdfonts">GitHub.</a></h2>
 
-	</div> <!--  .intro -->
-	
+
 	<div class="font-list">
+
 	<% @singleFonts.each do |font| %>
 		<div class="font-list__single-font">
-			<p class="font-list__name"><%= font %></p>
-			<div class="font-list__link-right">
-				<a class="font-list__buy-font btn" target="_blank" data-font-name="<%= font %>" href="<%= purchase_link(font) %>">buy at MyFonts</a>
-			</div> <!--  .font-list__link-right -->
+			<p class="font-list__name">
+				<%= font %>
+			</p>
+			<a class="font-list__buy-font btn" target="_blank" href="<%= purchase_link(font) %>">Buy @ MyFonts</a>
 		</div> <!--  .font-list__single-font -->
 	<% end %>
-	
+
 	</div> <!--  .font-list -->
 
 	<div class="result-actions">
