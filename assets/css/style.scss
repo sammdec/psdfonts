@@ -1,4 +1,285 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700italic);
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "reset";
 @import "vars";
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.3;
+	color: #1f2020;
+	background: #fafafa;
+	padding: 40px 0 0;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 1.2;
+	a {
+		color: #F42F65;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+a {
+	color: inherit;
+	font-weight: 700;
+	text-decoration: none;
+	transition: color 0.4s;
+	&:hover {
+		color: #F42F65;
+	}
+}
+
+p {
+ 	margin-bottom: 12px;
+ 	&:last-child {
+ 		margin-bottom: 0;
+ 	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+.container {
+	@include outer-container;
+	@include row;
+	@include media($biggest) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+.intro {
+	@include span-columns(6);
+	@include media($medium) {
+		@include span-columns(12);
+	}
+}
+
+.upload-form {
+	@include span-columns(6);
+	padding-top: 20px;
+	@include media($medium) {
+		@include span-columns(12);
+		padding-top: 20px;
+	}
+}
+
+h1 {
+	font-size: 60px;
+	letter-spacing: -2px;
+	margin-bottom: 10px;
+	@include media($medium) {
+		text-align: center;
+	}
+	a {
+		font-weight: 400;
+		color: #F42F65;
+		&:before {
+			content: '';
+			@include inline-block;
+			vertical-align: middle;
+			width: 15px;
+			height: 60px;
+			background: url(/img/logo@2x.png) no-repeat left center;
+			background-size: contain;
+			margin-right: 10px;
+			@include animation(blink 0.7s linear alternate infinite);
+		}
+	}
+}
+
+form {
+	text-align: center;
+}
+
+.btn {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 700;
+	display: block;
+	width: 100%;
+	background: transparent;
+	border: 2px solid #08acf0;
+	padding: 10px;
+	margin: 0;
+	margin-bottom: 20px;
+	font-size: 22px;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: color 0.4s;
+	outline: none;
+	line-height: 1;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	&:hover {
+		color: #08acf0;
+	}
+}
+
+.added {
+	color: #08acf0;
+	&:after {
+		content: '';
+		width: 20px;
+		height: 20px;
+		@include inline-block;
+		vertical-align: middle;
+		background: url(/img/yay@2x.png) no-repeat left center;
+		background-size: contain;
+		margin-left: 10px;
+	}
+}
+
+.upload-form__btn--submit {
+	border-color: #F42F65;
+	&:after {
+		content: '';
+		width: 15px;
+		height: 15px;
+		display: none;
+		vertical-align: baseline;
+		background: url(/img/upload@2x.png) no-repeat left center;
+		background-size: contain;
+		margin-left: 10px;
+		@include animation(blink 0.7s linear alternate infinite);
+	}
+	&:hover {
+		color: #F42F65;
+	}
+	&.uploading {
+		color: #F42F65;
+		&:after {
+			@include inline-block;
+		}
+	}
+}
+
+
+
+footer {
+	border-top: 2px solid #fde0e8;
+	padding: 20px 0;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+.notice {
+	margin-top: 20px;
+}
+
+.attributions,
+.got-your-back {
+	@include span-columns(6);
+	@include media($medium) {
+		@include span-columns(12);
+		margin-bottom: 10px;
+		text-align: center;
+	}
+}
+
+.heart {
+	width: 12px;
+}
+
+.flash-wrapper {
+	position: relative;
+}
+
+.js-flash {
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: 2px solid #f8ed3b;
+	border-radius: 2px;
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 16px;
+	display: none;
+	&.show {
+		display: block;
+	}
+}
+
+/* ==========================================================================
+   Font List
+   ========================================================================== */
+.font-list {
+	margin-top: 20px;
+}
+
+.font-list__single-font {
+	@include row;
+	border-bottom: 2px solid #f8ed3b;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.font-list__name {
+	@include span-columns(9);
+	padding-top: 10px;
+	margin-bottom: 0;
+	@include media($small) {
+		@include span-columns(12);
+		padding-top: 0;
+	}
+}
+
+.font-list__buy-font {
+	@include span-columns(3);
+	margin-bottom: 0;
+	font-size: 16px;
+	@include media($small) {
+		@include span-columns(12);
+	}
+}
+
+.result-actions {
+	@include row;
+	margin-top: 20px;
+}
+
+.copy-fonts {
+	@include span-columns(6);
+}
+
+.zeroclipboard-is-hover {
+	color: #08acf0;
+}
+
+.start-again {
+	@include span-columns(6);
+}
+
+/* ==========================================================================
+   Animation keyframes
+   ========================================================================== */
+
+@include keyframes(blink) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   404
+   ========================================================================== */
+.four-oh-four {
+	text-align: center;
+}
+
+.single-row {
+	@include inline-block;
+	width: auto;
+}
