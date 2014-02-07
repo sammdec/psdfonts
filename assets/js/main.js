@@ -44,6 +44,37 @@ $(document).ready(function(){
     $('.font-list__buy-font').click(function(){
         //_gs('event', 'Font buy link clicked');
     });
+
+    // Track users clicking on fropboxo button
+    $('#js-file-dropbox').on('click', function() {
+        _gs('event', 'Dropbox button pressed');
+    });
+
+    // Track form being submitted
+    $('.upload-form__btn--submit').on('click', function() {
+        _gs('event', 'Upload form submitted');
+    });
+
+    // Track users going to blog
+    $('.blog-link').on('click', function() {
+        _gs('event', 'Blog link clicked');
+    });
+
+    // Track clicks to blog post
+    $('.blog-article').on('click', function() {
+        _gs('event', 'Blog Article link clicked');
+    });
+
+    // Track clicks who start again
+    $('.start-again').on('click', function() {
+        _gs('event', 'User starting again');
+    });
+
+    // Track clipboard copy clicks
+    $('#js-copy-btn').on('click', function() {
+        _gs('event', 'Clicpboard copy button clicked');
+    });
+
 });
 
 
