@@ -6,7 +6,7 @@ var concat = require('gulp-concat');
 
 var paths = {
   css: 'assets/css/style.scss',
-  js: ['assets/js/main.js', 'assets/js/ZeroClipboard.js']
+  js: ['assets/js/jquery.min.js', 'assets/js/main.js', 'assets/js/ZeroClipboard.js']
 };
 
 gulp.task('css', function () {
