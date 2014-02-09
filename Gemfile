@@ -6,9 +6,6 @@ ruby '2.1.0'
 # simple DSL router
 gem 'sinatra'
 
-# Fast server
-gem 'puma'
-
 # cool mixins
 gem 'bourbon', '~> 3.1.8'
 # nice semantic grid
