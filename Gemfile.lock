@@ -17,8 +17,6 @@ GEM
       rake
     psd-enginedata (1.0.0)
       hashie (~> 2.0)
-    puma (2.5.1)
-      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -40,6 +38,5 @@ DEPENDENCIES
   bourbon (~> 3.1.8)
   neat (~> 1.5.0)
   psd (~> 2.0.0)
-  puma
   shotgun
   sinatra
