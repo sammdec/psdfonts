@@ -14,6 +14,8 @@ gem 'neat', '~> 1.5.0'
 # parse psd files
 gem 'psd', '~> 2.0.0'
 
+gem 'thin'
+
 # Find this memory leak
 gem 'newrelic_rpm', require: false
 
