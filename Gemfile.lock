@@ -9,11 +9,6 @@ GEM
     daemons (1.1.9)
     eventmachine (1.0.3)
     hashie (2.0.5)
-    httparty (0.13.0)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
-    json (1.8.1)
-    multi_xml (0.5.5)
     neat (1.5.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
@@ -48,7 +43,6 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon (~> 3.1.8)
-  httparty
   neat (~> 1.5.0)
   newrelic_rpm
   psd (~> 2.0.0)

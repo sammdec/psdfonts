@@ -10,7 +10,7 @@ class Psdfonts < Sinatra::Application
 
 		if !uploadedFile.empty?
 			tempFile = Tempfile.new(['psd', '.psd'])
-			tempFile.write(open(uploadedFile).read)
+			tempFile.write open(uploadedFile).read
 			tempPath = tempFile.path
 
 			psd = PSD.new(tempPath)
