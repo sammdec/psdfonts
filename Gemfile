@@ -15,7 +15,7 @@ gem 'neat', '~> 1.5.0'
 gem 'psd', '~> 2.0.0'
 
 # Find this memory leak
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', require: false
 
 # reloads sinatra when files change
 group :development do

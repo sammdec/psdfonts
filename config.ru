@@ -7,4 +7,5 @@ require 'open-uri'
 require './helpers'
 
 require './psdfonts'
+require 'newrelic_rpm'
 run Psdfonts
