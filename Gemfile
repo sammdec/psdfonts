@@ -14,6 +14,9 @@ gem 'neat', '~> 1.5.0'
 # parse psd files
 gem 'psd', '~> 2.0.0'
 
+# Find this memory leak
+gem 'newrelic_rpm'
+
 # reloads sinatra when files change
 group :development do
   gem 'shotgun'

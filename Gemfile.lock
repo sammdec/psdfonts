@@ -10,6 +10,7 @@ GEM
     neat (1.5.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
+    newrelic_rpm (3.7.2.192)
     psd (2.0.0)
       bindata
       chunky_png
@@ -37,6 +38,7 @@ PLATFORMS
 DEPENDENCIES
   bourbon (~> 3.1.8)
   neat (~> 1.5.0)
+  newrelic_rpm
   psd (~> 2.0.0)
   shotgun
   sinatra
